@@ -53,8 +53,8 @@ if (!file.exists(resultFile)) {
   remainingSpecies <- anti_join(allSpecies, completed, by = "sciName")
 }
 
-print(paste(nrow(allSpecies), "species in total"))
-print(paste(nrow(remainingSpecies), "species to go"))
+print(paste(nrow(allSpecies), "species in total"), quote = FALSE)
+print(paste(nrow(remainingSpecies), "species to go"), quote = FALSE)
 pb = txtProgressBar(min = 0, max = nrow(remainingSpecies), initial = 0, style = 3) 
 for (i in 1:nrow(remainingSpecies)) {
   speciesEntry <- remainingSpecies[i,]
