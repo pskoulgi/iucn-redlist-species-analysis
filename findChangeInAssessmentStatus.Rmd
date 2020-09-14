@@ -1,12 +1,10 @@
 ---
-title: "R Notebook"
+title: "Changes in IUCN Red List status from 2010 to present"
 output:
   html_document:
     df_print: paged
   pdf_document: default
 ---
-
-# Changes in IUCN Red List status from 2010 to present
 
 Use the status history data for each species to tell whether its status has improved or worsened.
 
@@ -17,6 +15,10 @@ library(tidyverse)
 ```
 
 # Load and reorganize status history data 
+
+Before proceeding: 
+* Species which don't appear in the Red List return `NA`, those are dropped 
+* We are only interested in changes between "threatened" and non-"threatened" status, but the IUCN Red List web API returns several more categories. Those categories are appropriately collapsed and ordered before proceeding.
 
 ```{r load data}
 assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>% 
@@ -42,7 +44,7 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
   )
 ```
 ## Find change in status from 2010 to present
-
+Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the 2010 status as the one prior, and closest, to it. We choose the most recent status as the present status
 
 ### Status in 2010
 
@@ -57,6 +59,8 @@ pre2010Status <- assessmentHistories %>%
   )
 ```
 
+### Status now
+
 ```{r status present}
 withPreAndPost2010Status <- left_join(pre2010Status, assessmentHistories, by = "sciName") %>% 
   filter(year > 2010) %>% 
@@ -69,6 +73,8 @@ withPreAndPost2010Status <- left_join(pre2010Status, assessmentHistories, by = "
   )
 ```
 
+### Find changes in status
+
 ```{r}
 withPreAndPost2010Status <- withPreAndPost2010Status %>% 
   mutate(
@@ -78,14 +84,22 @@ withPreAndPost2010Status <- withPreAndPost2010Status %>%
   distinct(sciName, .keep_all = TRUE)
 ```
 
+Species whose status improved:
+```{r}
+withPreAndPost2010Status %>%
+  filter(statusImproved == TRUE) %>% 
+  select(-statusWorsened)
+```
+
+Species whose status worsened:
+```{r}
+withPreAndPost2010Status %>%
+  filter(statusWorsened == TRUE) %>% 
+  select(-statusImproved)
+```
+
 ## Session info
 
 ```{r}
 sessionInfo()
 ```
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
