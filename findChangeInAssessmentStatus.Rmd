@@ -52,7 +52,6 @@ Assessments happen for different species at different times, so there is no fixe
 
 ```{r status 2010}
 pre2010Status <- assessmentHistories %>% 
-  head(500) %>%
   filter(year <= 2010) %>% 
   group_by(sciName) %>% 
   summarise(
