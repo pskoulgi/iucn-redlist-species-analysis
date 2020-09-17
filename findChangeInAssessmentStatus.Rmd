@@ -102,6 +102,10 @@ withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, 
 ```
 ## Find percentage change in status (2010 - now)
 
+$$
+\text{Percentage change} = 100 \times\frac{N_{endangered \ now}  - N_{endangered \ @ \ 2010} }{N_{endangered \ @ \ 2010}} 
+$$ 
+
 ```{r}
 numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
   mutate(isEndangered = status2010 <= levels(.data$status2010)[3]) %>% 
