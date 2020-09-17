@@ -26,8 +26,7 @@ Before proceeding:
 ```{r load data}
 assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>% 
   drop_na(year) %>% 
-  mutate(code = factor(code, ordered = TRUE),
-         category = factor(category, ordered = TRUE)) %>% 
+  mutate(category = factor(category, ordered = TRUE)) %>% 
   mutate(
     cat_reassigned = fct_collapse(
       category,
@@ -42,7 +41,8 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
                 "Data Deficient", "\"Very rare but believed to be stable or increasing\"",
                 "\"Very rare and believed to be decreasing in numbers\"",
                 "\"Less rare but believed to be threatened-requires watching\"")
-    ) %>% fct_relevel("other", "leastConcern", "nearThreatened", "vulnerable",
+    ) %>% 
+      fct_relevel("other", "leastConcern", "nearThreatened", "vulnerable",
                       "threatened", "endangered", "criticallyEndangered")
   )
 ```
