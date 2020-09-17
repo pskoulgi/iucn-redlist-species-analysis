@@ -99,30 +99,25 @@ withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, 
     statusNowAssessmentYear = max(year)
   )
 ```
-
-### Find changes in status
+### Find percentage change in status
 
 ```{r}
-withPreAndPost2010Status <- withPreAndPost2010Status %>% 
-  mutate(
-    statusWorsened = statusNow < status2010,
-    statusImproved = statusNow > status2010
-  ) %>% 
-  distinct(sciName, .keep_all = TRUE)
-```
+numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
+  mutate(isEndangered = status2010 <= levels(.data$status2010)[3]) %>% 
+  filter(isEndangered == TRUE) %>% 
+  nrow()
+numEndangeredNow <- withPreAndPost2010Status %>% 
+  mutate(isEndangered = statusNow <= levels(.data$statusNow)[3]) %>% 
+  filter(isEndangered == TRUE) %>% 
+  nrow()
 
-Species whose status improved:
-```{r}
-withPreAndPost2010Status %>%
-  filter(statusImproved == TRUE) %>% 
-  select(-statusWorsened)
-```
-
-Species whose status worsened:
-```{r}
-withPreAndPost2010Status %>%
-  filter(statusWorsened == TRUE) %>% 
-  select(-statusImproved)
+print(
+  paste(
+    100 * (numEndangeredNow - numEndangeredBefore2010) / numEndangeredBefore2010,
+    ": Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians"
+  ),
+  quote = FALSE
+)
 ```
 
 ## Session info
