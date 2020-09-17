@@ -42,8 +42,8 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
                 "Data Deficient", "\"Very rare but believed to be stable or increasing\"",
                 "\"Very rare and believed to be decreasing in numbers\"",
                 "\"Less rare but believed to be threatened-requires watching\"")
-    ) %>% fct_relevel("criticallyEndangered", "endangered", "threatened",
-                      "vulnerable", "nearThreatened", "leastConcern", "other")
+    ) %>% fct_relevel("other", "leastConcern", "nearThreatened", "vulnerable",
+                      "threatened", "endangered", "criticallyEndangered")
   )
 ```
 # Find change in status from 2010 to present
@@ -119,11 +119,11 @@ $$
 
 ```{r}
 numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
-  mutate(isEndangered = status2010 <= levels(.data$status2010)[3]) %>% 
+  mutate(isEndangered = status2010 >= levels(.data$status2010)[5]) %>% 
   filter(isEndangered == TRUE) %>% 
   nrow()
 numEndangeredNow <- withPreAndPost2010Status %>% 
-  mutate(isEndangered = statusNow <= levels(.data$statusNow)[3]) %>% 
+  mutate(isEndangered = statusNow >= levels(.data$statusNow)[5]) %>% 
   filter(isEndangered == TRUE) %>% 
   nrow()
 
