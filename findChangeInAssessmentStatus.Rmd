@@ -2,6 +2,7 @@
 title: "Changes in IUCN Red List status from 2010 to present"
 output:
   html_document:
+    toc: true
     df_print: paged
   pdf_document: default
 ---
@@ -45,11 +46,11 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
                       "vulnerable", "nearThreatened", "leastConcern", "other")
   )
 ```
-## Find change in status from 2010 to present
+# Find change in status from 2010 to present
 
 Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the year 2010 status as the one prior, and closest, in time to it. We choose the most recent status as the present status.
 
-### Find species assessed both before and after 2010
+## Filter to species assessed both before and after 2010
 
 First, we find species that have been assessed both before and after 2010. 
 ```{r assessed before and after 2010}
@@ -74,7 +75,7 @@ print(
 ```
 
 
-### Status in 2010
+## Find status in 2010
 
 ```{r status 2010}
 pre2010Status <- withFullAssessmentHistory %>% 
@@ -86,7 +87,7 @@ pre2010Status <- withFullAssessmentHistory %>%
   )
 ```
 
-### Status now
+## Find status now
 
 ```{r status present}
 withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, by = "sciName") %>% 
@@ -99,7 +100,7 @@ withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, 
     statusNowAssessmentYear = max(year)
   )
 ```
-### Find percentage change in status
+## Find percentage change in status (2010 - now)
 
 ```{r}
 numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
@@ -120,7 +121,7 @@ print(
 )
 ```
 
-## Session info
+# Session info
 
 ```{r}
 sessionInfo()
