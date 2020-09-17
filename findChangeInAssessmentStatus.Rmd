@@ -20,6 +20,7 @@ Before proceeding:
 
 * Species which don't appear in the Red List return `NA`, those are dropped 
 * We are only interested in changes between "threatened" and non-"threatened" status, but the IUCN Red List web API returns several more categories. Those categories are appropriately collapsed and ordered before proceeding.
+* Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). But I am unsure whether I am handling `"threatened"` category correctly.
 
 ```{r load data}
 assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>% 
@@ -41,7 +42,7 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
                 "\"Very rare and believed to be decreasing in numbers\"",
                 "\"Less rare but believed to be threatened-requires watching\"")
     ) %>% fct_relevel("criticallyEndangered", "endangered", "threatened",
-                      "nearThreatened", "vulnerable", "leastConcern", "other")
+                      "vulnerable", "nearThreatened", "leastConcern", "other")
   )
 ```
 ## Find change in status from 2010 to present
