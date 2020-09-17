@@ -52,7 +52,7 @@ Assessments happen for different species at different times, so there is no fixe
 
 ## Filter to species assessed both before and after 2010
 
-First, we find species that have been assessed both before and after 2010. 
+Percentage change in number of endangered species from 2010 to now can be done over those species that have been assessed in both epochs. Hence, first we find species that have been assessed both before and after 2010.
 ```{r assessed before and after 2010}
 assessedBefore2010 <- assessmentHistories %>% filter(year <= 2010) %>% 
   distinct(sciName)
@@ -72,10 +72,19 @@ print(
   ),
   quote = FALSE
 )
+print(
+  paste(
+    nrow(assessmentHistories %>% distinct(sciName)),
+    ": Total number of valid species in our dataset"
+  ),
+  quote = FALSE
+)
 ```
 
 
 ## Find status in 2010
+
+It is the status of the species at the maximum assessment year before 2010 (i.e., most recent year before 2010).
 
 ```{r status 2010, message=FALSE}
 pre2010Status <- withFullAssessmentHistory %>% 
@@ -88,6 +97,8 @@ pre2010Status <- withFullAssessmentHistory %>%
 ```
 
 ## Find status now
+
+It is the status of the species at the maximum assessment year after 2010 (i.e., most recent year after 2010 and before 2020).
 
 ```{r status present, message=FALSE}
 withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, by = "sciName") %>% 
