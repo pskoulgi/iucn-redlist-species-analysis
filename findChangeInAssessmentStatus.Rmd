@@ -113,6 +113,8 @@ withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, 
 ```
 ## Find percentage change in status (2010 - now)
 
+For periods before 2010 and between 2019-2020, label species as endangered if their assessed threat level is `"vulnerable"` or higher ([see IUCN reference](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)). Count them and calculate percentage change in total numbers as follows:
+
 $$
 \text{Percentage change} = 100 \times\frac{N_{endangered \ now}  - N_{endangered \ @ \ 2010} }{N_{endangered \ @ \ 2010}} 
 $$ 
