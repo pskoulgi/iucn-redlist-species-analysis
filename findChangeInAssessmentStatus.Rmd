@@ -11,7 +11,7 @@ Use the status history data for each species to tell whether its status has impr
 
 ## Load libraries
 
-```{r load libraries}
+```{r load libraries, message=FALSE}
 library(tidyverse)
 ```
 
@@ -77,7 +77,7 @@ print(
 
 ## Find status in 2010
 
-```{r status 2010}
+```{r status 2010, message=FALSE}
 pre2010Status <- withFullAssessmentHistory %>% 
   filter(year <= 2010) %>% 
   group_by(sciName) %>% 
@@ -89,7 +89,7 @@ pre2010Status <- withFullAssessmentHistory %>%
 
 ## Find status now
 
-```{r status present}
+```{r status present, message=FALSE}
 withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, by = "sciName") %>% 
   filter(year > 2010) %>% 
   group_by(sciName) %>% 
