@@ -7,7 +7,7 @@ output:
   pdf_document: default
 ---
 
-Use the status history data for each species to tell whether its status has improved or worsened.
+Use the status history data for each species and calculate the percentage change in number of endangered species from 2010 to present.
 
 ## Load libraries
 
@@ -20,8 +20,10 @@ library(tidyverse)
 Before proceeding: 
 
 * Species which don't appear in the Red List return `NA`, those are dropped 
-* We are only interested in changes between `"threatened"` and non-`"threatened"` status, but the IUCN Red List web API returns several more categories. Those categories are appropriately collapsed and ordered before proceeding.
-* Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). But I am unsure whether I am handling `"threatened"` category correctly.
+* We are only interested in changes between "endangered" and non-"endangered" status, but the IUCN Red List web API returns several more categories. Those categories are appropriately collapsed and ordered before proceeding.
+* Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). Threat level `"vulnerable"` or higher is "endangered".
+
+**NOTE:** But I am unsure whether I am handling `"threatened"` category correctly.
 
 ```{r load data}
 assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>% 
