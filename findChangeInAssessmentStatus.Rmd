@@ -67,8 +67,8 @@ withFullAssessmentHistory <- left_join(
 
 print(
   paste(
-    "Num. species assessed both before and after 2010: ", 
-    nrow(withFullAssessmentHistory %>% distinct(sciName))
+    nrow(withFullAssessmentHistory %>% distinct(sciName)),
+    ": Num. species assessed both before and after 2010"
   ),
   quote = FALSE
 )
