@@ -20,10 +20,8 @@ library(tidyverse)
 Before proceeding: 
 
 * Species which don't appear in the Red List return `NA`, those are dropped 
-* We are only interested in changes between "endangered" and non-"endangered" status, but the IUCN Red List web API returns several more categories. Those categories are appropriately collapsed and ordered before proceeding.
-* Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). Threat level `"vulnerable"` or higher is "endangered".
-
-**NOTE:** But I am unsure whether I am handling `"threatened"` category correctly.
+* We are only interested in changes between "endangered" and non-"endangered" status, but the IUCN Red List web API returns several more categories in status histories. Those categories are appropriately collapsed and ordered before proceeding.
+* Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). Here we consider threat level `"vulnerable"` or higher as "endangered", and we calculate the percentage change in number of those.
 
 ```{r load data}
 assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>% 
@@ -33,8 +31,7 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
     cat_reassigned = fct_collapse(
       category,
       criticallyEndangered = "Critically Endangered",
-      endangered = "Endangered",
-      threatened = "Threatened",
+      endangered = c("Endangered", "Threatened"),
       nearThreatened = "Near Threatened",
       vulnerable = "Vulnerable",
       leastConcern = "Least Concern",
@@ -45,7 +42,7 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
                 "\"Less rare but believed to be threatened-requires watching\"")
     ) %>% 
       fct_relevel("other", "leastConcern", "nearThreatened", "vulnerable",
-                      "threatened", "endangered", "criticallyEndangered")
+                  "endangered", "criticallyEndangered")
   )
 ```
 # Find change in status from 2010 to present
@@ -136,13 +133,21 @@ $$
 \text{Percentage change} = 100 \times\frac{N_{endangered \ now}  - N_{endangered \ @ \ 2010} }{N_{endangered \ @ \ 2010}} 
 $$ 
 
+
+The order of status level factors, from low to high, is:
+
+```{r}
+levels(withPreAndPost2010Status$status2010)
+levels(withPreAndPost2010Status$statusNow)
+```
+
 ```{r}
 numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
-  mutate(isEndangered = status2010 >= levels(.data$status2010)[5]) %>% 
+  mutate(isEndangered = status2010 >= levels(.data$status2010)[4]) %>% 
   filter(isEndangered == TRUE) %>% 
   nrow()
 numEndangeredNow <- withPreAndPost2010Status %>% 
-  mutate(isEndangered = statusNow >= levels(.data$statusNow)[5]) %>% 
+  mutate(isEndangered = statusNow >= levels(.data$statusNow)[4]) %>% 
   filter(isEndangered == TRUE) %>% 
   nrow()
 
