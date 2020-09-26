@@ -1,5 +1,5 @@
 ---
-title: "Changes in IUCN Red List status from 2010 to present"
+title: "Changes in IUCN Red List status from 2010 to now"
 output:
   html_document:
     toc: true
@@ -7,7 +7,7 @@ output:
   pdf_document: default
 ---
 
-Use the status history data for each species and calculate the percentage change in number of endangered species from 2010 to present.
+Use the status history data for each species and calculate the percentage change in number of endangered species from 2010 to now.
 
 ## Load libraries
 
@@ -62,9 +62,9 @@ assessmentHistories <- rawData %>%
                   "endangered", "criticallyEndangered")
   )
 ```
-# Find change in status from 2010 to present
+# Find change in status from 2010 to now
 
-Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the year 2010 status as the one prior, and closest, in time to it. We choose the most recent status as the present status.
+Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the year 2010 status as the one prior, and closest, in time to it. We choose the most recent status as the status now.
 
 For species that were assessed before 2010 and not after, we count them to have had their status unchanged.
 
@@ -115,9 +115,9 @@ pre2010Status <- withFullAssessmentHistory %>%
 
 ## Find status now
 
-It is the status of the species at the most recent assessment year. For species which haven't been assessed since 2010, their status at 2010 is taken to be their current status. It follows that such species are counted as having their status unchanged from 2010 till now.
+It is the status of the species at the most recent assessment year. For species which haven't been assessed since 2010, their status now is taken to be their status at 2010. It follows that such species are counted as having their status unchanged from 2010 to now.
 
-```{r status present, message=FALSE}
+```{r status now, message=FALSE}
 withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, by = "sciName") %>% 
   group_by(sciName) %>% 
   summarise(
@@ -130,7 +130,7 @@ withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, 
 
 A tally of species that were assessed before 2010 but not since:
 
-```{r present status is from before 2010}
+```{r status now is from before 2010}
 print(
   paste(
     nrow(withPreAndPost2010Status %>% 
@@ -151,14 +151,14 @@ $$
 $$ 
 
 ### Check status ordering
-The order of status level factors, from low to high, is:
+The order of status level factors, from low to high, is (following [IUCN's ordering](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)):
 
 ```{r}
 levels(withPreAndPost2010Status$status2010)
 levels(withPreAndPost2010Status$statusNow)
 ```
 
-### Calculate percentage
+### Calculate percentage change
 
 ```{r}
 numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
