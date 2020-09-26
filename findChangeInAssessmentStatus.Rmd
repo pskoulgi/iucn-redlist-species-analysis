@@ -154,8 +154,8 @@ $$
 The order of status level factors, from low to high, is (following [IUCN's ordering](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)):
 
 ```{r}
-levels(withPreAndPost2010Status$status2010)
-levels(withPreAndPost2010Status$statusNow)
+min(withPreAndPost2010Status$status2010)
+min(withPreAndPost2010Status$statusNow)
 ```
 
 ### Calculate percentage change
