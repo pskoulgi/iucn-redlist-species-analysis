@@ -52,17 +52,18 @@ assessmentHistories <- read.csv("results/redlistRead_complete.csv") %>%
 
 Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the year 2010 status as the one prior, and closest, in time to it. We choose the most recent status as the present status.
 
-## Filter to species assessed both before and after 2010
+For species that were assessed before 2010 and not after, we count them to have had their status unchanged.
 
-Percentage change in number of endangered species from 2010 to now can be done over those species that have been assessed in both epochs. Hence, first we find species that have been assessed both before and after 2010.
-```{r assessed before and after 2010}
+## Filter to species assessed before 2010
+
+Percentage change in number of endangered species from 2010 to now can be calculated over only those species that have been assessed before 2010. Hence, first we find species that have been assessed before 2010
+.
+```{r assessed before 2010}
 assessedBefore2010 <- assessmentHistories %>% filter(year <= 2010) %>% 
-  distinct(sciName)
-assessedAfter2010 <- assessmentHistories %>% filter(year > 2010) %>% 
   distinct(sciName)
 
 withFullAssessmentHistory <- left_join(
-  inner_join(assessedBefore2010, assessedAfter2010, by = "sciName"),
+  assessedBefore2010,
   assessmentHistories,
   by = "sciName"
 )
@@ -70,7 +71,7 @@ withFullAssessmentHistory <- left_join(
 print(
   paste(
     nrow(withFullAssessmentHistory %>% distinct(sciName)),
-    ": Num. species assessed both before and after 2010"
+    ": Num. species assessed before 2010"
   ),
   quote = FALSE
 )
@@ -100,11 +101,10 @@ pre2010Status <- withFullAssessmentHistory %>%
 
 ## Find status now
 
-It is the status of the species at the maximum assessment year after 2010 (i.e., most recent year after 2010 and before 2020).
+It is the status of the species at the most recent assessment year. For species which haven't been assessed since 2010, their status at 2010 is taken to be their current status. It follows that such species are counted as having their status unchanged from 2010 till now.
 
 ```{r status present, message=FALSE}
 withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, by = "sciName") %>% 
-  filter(year > 2010) %>% 
   group_by(sciName) %>% 
   summarise(
     status2010 = status2010,
@@ -113,9 +113,24 @@ withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, 
     statusNowAssessmentYear = max(year)
   )
 ```
+
+A tally of species that were assessed before 2010 but not since:
+
+```{r present status is from before 2010}
+print(
+  paste(
+    nrow(withPreAndPost2010Status %>% 
+           filter(statusNowAssessmentYear <= 2010) %>%
+           distinct(sciName)),
+    ": Number of species assessed before 2010 but not since"
+  ),
+  quote = FALSE
+)
+```
+
 ## Find percentage change in status (2010 - now)
 
-For periods before 2010 and between 2019-2020, label species as endangered if their assessed threat level is `"vulnerable"` or higher ([see IUCN reference](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)). Count them and calculate percentage change in total numbers as follows:
+For assessment in 2010 and now, label species as endangered if their assessed threat level is `"vulnerable"` or higher ([see IUCN reference](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)). Count them and calculate percentage change in total numbers as follows:
 
 $$
 \text{Percentage change} = 100 \times\frac{N_{endangered \ now}  - N_{endangered \ @ \ 2010} }{N_{endangered \ @ \ 2010}} 
