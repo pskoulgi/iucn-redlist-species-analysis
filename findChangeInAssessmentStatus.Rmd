@@ -1,5 +1,5 @@
 ---
-title: "Changes in IUCN Red List status from 2010 to now"
+title: "Western Ghats species: Changes in IUCN Red List status from 2010 to now"
 output:
   html_document:
     toc: true
@@ -8,6 +8,8 @@ output:
 ---
 
 Use the status history data for each species and calculate the percentage change in number of endangered species from 2010 to now.
+
+This includes amphibian, reptile, fish, mammal and bird species list Srini shared with us.
 
 ## Load libraries
 
