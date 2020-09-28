@@ -40,4 +40,4 @@ vignettes/*.pdf
 
 # Data and result files
 /data
-/results
+# /results
