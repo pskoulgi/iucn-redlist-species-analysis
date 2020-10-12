@@ -57,8 +57,12 @@ if (nrow(remainingSpecies) > 0) {
     assessmentHistory <- rl_history(speciesEntry$sciName)
     Sys.sleep(1)
     if (is_empty(assessmentHistory$result)) {
+      # Status history does not exist, so look for species synonyms and
+      # look up their histories
       speciesSynonyms <- rl_synonyms(speciesEntry$sciName)
       if (!is_empty(speciesSynonyms$result)) {
+        # Synonyms exist, so go through the entire list of synonyms and 
+        # save status history of the first one that returns a valid history
         for (j in 1:nrow(speciesSynonyms$result)){
           synonymousSpecies <- speciesSynonyms$result[j,]$accepted_name
           synSpecAssessHistory <- rl_history(synonymousSpecies)
@@ -66,24 +70,30 @@ if (nrow(remainingSpecies) > 0) {
           if(!is_empty(synSpecAssessHistory$result)){
             assessmentHistory$result = synSpecAssessHistory$result %>% 
               mutate(synonymousSpeciesUsed = synonymousSpecies)
-            break
+            break # if a synonym with valid history is found, done
           } 
           else {
-            next
+            next # if a synonym does not have valid history, try the next one
           }
         }
         
         if (is_empty(synSpecAssessHistory$result)) {
+          # At the end of working through the list of synonyms, no valid history is found,
+          # so set NAs and note that all available synonyms were tried 
           assessmentHistory$result <- data.frame(
             year = NA, code = NA, category = NA, synonymousSpeciesUsed = 'all available')
         }
       }
       else {
+        # Status history does not exist, and there are no synonyms eiter, so
+        # set NAs and note that no synonyms were available
         assessmentHistory$result <- data.frame(
           year = NA, code = NA, category = NA, synonymousSpeciesUsed = 'none available')
       }
     }
     else {
+      # Status history was found, no need to look for synonyms, so make note of that
+      # synonyms is NA
       assessmentHistory$result <- assessmentHistory$result %>% 
         mutate(synonymousSpeciesUsed = NA)
     }
