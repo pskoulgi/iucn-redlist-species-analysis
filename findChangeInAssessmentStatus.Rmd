@@ -30,11 +30,12 @@ Before proceeding:
 We first check for how many of the species are `'extinct'` and which one/s. Turns out it is one species, _Raorchestes travancoricus_, which was thought to be extinct but was later rediscovered.
 
 ```{r load data}
-rawData <- read.csv("results/redlistRead_complete_synonymRuns.csv") %>% 
-  drop_na(year)
-extinctSpecies <- rawData %>% filter(str_detect(str_to_lower(category), 'extinct')) %>% 
+rawData <- read.csv("results/redlistRead_complete_synonymRuns.csv")
+extinctSpecies <- rawData %>% drop_na(year) %>% 
+  filter(str_detect(str_to_lower(category), 'extinct')) %>% 
   select(sciName)
-rawData %>% filter(sciName == extinctSpecies$sciName) %>% 
+rawData %>% drop_na(year) %>% 
+  filter(sciName == extinctSpecies$sciName) %>% 
   select(sciName, taxon, year, category, synonymousSpeciesUsed)
 ```
 
@@ -42,6 +43,7 @@ Categories of threat status are collapsed to fewer levels and ordered as desired
 
 ```{r}
 assessmentHistories <- rawData %>% 
+  drop_na(year) %>% 
   mutate(category = factor(category, ordered = TRUE)) %>% 
   mutate(
     cat_reassigned = fct_collapse(
@@ -67,6 +69,12 @@ assessmentHistories <- rawData %>%
 Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the year 2010 status as the one prior, and closest, in time to it. We choose the most recent status as the status now.
 
 For species that were assessed before 2010 and not after, we count them to have had their status unchanged.
+
+Some species (`r rawData %>% filter(is.na(year)) %>% nrow()` of them) that didn't have valid status histories (including after trying their synonyms) will be dropped from this change claculations.
+
+```{r}
+rawData %>% filter(is.na(year))
+```
 
 ## Filter to species assessed before 2010
 
