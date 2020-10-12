@@ -30,7 +30,7 @@ allSpecies <- amphibians %>% bind_rows(birds) %>% bind_rows(fish) %>%
 # Since the web API loop takes a couple of hours to complets, it is susceptible to random internet issues that might cause it to abort. So had to figure out a way to run for all species in incremental steps. So, if the results file exists, we make sure the web API loop runs only for species it doesn't already have.
 
 resultFile <- "results/redlistRead.csv"
-fileColumns <- "origId, sciName, taxon, year, category, code"
+fileColumns <- "origId, sciName, taxon, year, category, code, synonymousSpeciesUsed"
 
 if (!file.exists(resultFile)) {
   file.create(resultFile)
@@ -55,17 +55,44 @@ if (nrow(remainingSpecies) > 0) {
   for (i in 1:nrow(remainingSpecies)) {
     speciesEntry <- remainingSpecies[i,]
     assessmentHistory <- rl_history(speciesEntry$sciName)
-    Sys.sleep(3)
+    Sys.sleep(1)
     if (is_empty(assessmentHistory$result)) {
-      assessmentHistory$result <- data.frame(
-        year = NA, code = NA, category = NA)
+      speciesSynonyms <- rl_synonyms(speciesEntry$sciName)
+      if (!is_empty(speciesSynonyms$result)) {
+        for (j in 1:nrow(speciesSynonyms$result)){
+          synonymousSpecies <- speciesSynonyms$result[j,]$accepted_name
+          synSpecAssessHistory <- rl_history(synonymousSpecies)
+          synSpecAssessHistory
+          if(!is_empty(synSpecAssessHistory$result)){
+            assessmentHistory$result = synSpecAssessHistory$result %>% 
+              mutate(synonymousSpeciesUsed = synonymousSpecies)
+            break
+          } 
+          else {
+            next
+          }
+        }
+        
+        if (is_empty(synSpecAssessHistory$result)) {
+          assessmentHistory$result <- data.frame(
+            year = NA, code = NA, category = NA, synonymousSpeciesUsed = 'all available')
+        }
+      }
+      else {
+        assessmentHistory$result <- data.frame(
+          year = NA, code = NA, category = NA, synonymousSpeciesUsed = 'none available')
+      }
+    }
+    else {
+      assessmentHistory$result <- assessmentHistory$result %>% 
+        mutate(synonymousSpeciesUsed = NA)
     }
     appended <- assessmentHistory$result %>% 
       mutate(
         origId = first(speciesEntry$origId),
         taxon = first(speciesEntry$taxon),
         sciName = first(speciesEntry$sciName)) %>% 
-      select(origId, sciName, taxon, year, category, code)
+      select(origId, sciName, taxon, year, category, code, synonymousSpeciesUsed)
     write_csv(appended, resultFile, append = TRUE)
     setTxtProgressBar(pb,i)
   }
