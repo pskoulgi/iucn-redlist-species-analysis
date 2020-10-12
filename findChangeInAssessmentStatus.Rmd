@@ -22,26 +22,23 @@ library(tidyverse)
 Before proceeding: 
 
 * Species which don't appear in the Red List return `NA`, those are dropped 
+    + If no synonyms exist in the database, such species have `synonymousSpeciesUsed = 'none available'`
+    + If synonyms exist but none of them appear in the Red List either, then such species have `synonymousSpeciesUsed = 'all available'`
 * We are only interested in changes between "endangered" and non-"endangered" status, but the IUCN Red List web API returns several more categories in status histories. Those categories are appropriately collapsed and ordered before proceeding.
 * Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). Here we consider threat level `"vulnerable"` or higher as "endangered", and we calculate the percentage change in number of those.
 
-Note that none of the species in our dataset have been listed as "extinct".
+We first check for how many of the species are `'extinct'` and which one/s. Turns out it is one species, _Raorchestes travancoricus_, which was thought to be extinct but was later rediscovered.
 
 ```{r load data}
-rawData <- read.csv("results/redlistRead_complete.csv") %>% 
+rawData <- read.csv("results/redlistRead_complete_synonymRuns.csv") %>% 
   drop_na(year)
-print(
-  paste(
-    nrow(rawData %>% 
-           filter(str_detect(str_to_lower(category), 'extinct')) %>% 
-           distinct(sciName)),
-    ": Number of species \"extinct\""
-  ),
-  quote = FALSE
-)
+extinctSpecies <- rawData %>% filter(str_detect(str_to_lower(category), 'extinct')) %>% 
+  select(sciName)
+rawData %>% filter(sciName == extinctSpecies$sciName) %>% 
+  select(sciName, taxon, year, category, synonymousSpeciesUsed)
 ```
 
-Hence, "extinct" categories are left out of the status categories.
+Categories of threat status are collapsed to fewer levels and ordered as desired, according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria).
 
 ```{r}
 assessmentHistories <- rawData %>% 
@@ -49,6 +46,7 @@ assessmentHistories <- rawData %>%
   mutate(
     cat_reassigned = fct_collapse(
       category,
+      extinct = "Extinct",
       criticallyEndangered = "Critically Endangered",
       endangered = c("Endangered", "Threatened"),
       nearThreatened = "Near Threatened",
@@ -61,7 +59,7 @@ assessmentHistories <- rawData %>%
                 "\"Less rare but believed to be threatened-requires watching\"")
     ) %>% 
       fct_relevel("other", "leastConcern", "nearThreatened", "vulnerable",
-                  "endangered", "criticallyEndangered")
+                  "endangered", "criticallyEndangered", "extinct")
   )
 ```
 # Find change in status from 2010 to now
