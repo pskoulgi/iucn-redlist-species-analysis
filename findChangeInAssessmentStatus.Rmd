@@ -41,7 +41,7 @@ rawData %>% drop_na(year) %>%
 
 Categories of threat status are collapsed to fewer levels and ordered as desired, according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria).
 
-```{r}
+```{r reorganize threat categories}
 assessmentHistories <- rawData %>% 
   drop_na(year) %>% 
   mutate(category = factor(category, ordered = TRUE)) %>% 
@@ -72,8 +72,8 @@ For species that were assessed before 2010 and not after, we count them to have 
 
 Some species (`r rawData %>% filter(is.na(year)) %>% nrow()` of them) that didn't have valid status histories (including after trying their synonyms) will be dropped from this change claculations.
 
-```{r}
-rawData %>% filter(is.na(year))
+```{r list species without valid status histories}
+rawData %>% filter(is.na(year)) %>% select(-origId, -code)
 ```
 
 ## Filter to species assessed before 2010
@@ -136,7 +136,7 @@ withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, 
   )
 ```
 
-A tally of species that were assessed before 2010 but not since:
+A tally of species that were assessed before 2010 but not since, which have been counted as having their status unchanged since 2010:
 
 ```{r status now is from before 2010}
 print(
@@ -161,14 +161,14 @@ $$
 ### Check status ordering
 The order of status level factors, from low to high, is (following [IUCN's ordering](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)):
 
-```{r}
+```{r display status order}
 min(withPreAndPost2010Status$status2010)
 min(withPreAndPost2010Status$statusNow)
 ```
 
 ### Calculate percentage change
 
-```{r}
+```{r percent change calculation}
 numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
   mutate(isEndangered = status2010 >= levels(.data$status2010)[4]) %>% 
   filter(isEndangered == TRUE) %>% 
@@ -189,6 +189,6 @@ print(
 
 # Details of system and libraries used
 
-```{r}
+```{r package details}
 sessionInfo()
 ```
