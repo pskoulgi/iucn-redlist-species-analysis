@@ -15,6 +15,7 @@ This includes amphibian, reptile, fish, mammal and bird species list Srini share
 
 ```{r load libraries, message=FALSE}
 library(tidyverse)
+library(rredlist)
 ```
 
 # Load and reorganize status history data 
@@ -23,7 +24,7 @@ Before proceeding:
 
 * Species which don't appear in the Red List return `NA`, those are dropped 
     + If no synonyms exist in the database, such species have `synonymousSpeciesUsed = 'none available'`
-    + If synonyms exist but none of them appear in the Red List either, then such species have `synonymousSpeciesUsed = 'all available'`
+    + If synonyms exist but none of them appear in the Red List either, then such species have `synonymousSpeciesUsed = 'all available'`; there are no such species in our list.
 * We are only interested in changes between "endangered" and non-"endangered" status, but the IUCN Red List web API returns several more categories in status histories. Those categories are appropriately collapsed and ordered before proceeding.
 * Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). Here we consider threat level `"vulnerable"` or higher as "endangered", and we calculate the percentage change in number of those.
 
@@ -187,8 +188,13 @@ print(
 )
 ```
 
-# Details of system and libraries used
+# Database citation & details of system and libraries used
+Citation of the IUCN dataset version used:
+```{r}
+rl_citation()
+```
 
+System details and libraries used:
 ```{r package details}
 sessionInfo()
 ```
