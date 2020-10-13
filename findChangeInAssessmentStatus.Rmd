@@ -189,9 +189,11 @@ print(
 ```
 
 # Database citation & details of system and libraries used
-Citation of the IUCN dataset version used:
+Citation of the IUCN dataset version, main packages used:
 ```{r}
 rl_citation()
+citation("rredlist")
+citation("tidyverse")
 ```
 
 System details and libraries used:

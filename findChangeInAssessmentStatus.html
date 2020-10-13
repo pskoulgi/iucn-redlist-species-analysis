@@ -1824,9 +1824,42 @@ print(
 </div>
 <div id="database-citation-details-of-system-and-libraries-used" class="section level1">
 <h1>Database citation &amp; details of system and libraries used</h1>
-<p>Citation of the IUCN dataset version used:</p>
+<p>Citation of the IUCN dataset version, main packages used:</p>
 <pre class="r"><code>rl_citation()</code></pre>
 <pre><code>## [1] &quot;IUCN 2015. IUCN Red List of Threatened Species. Version 2020-2 &lt;www.iucnredlist.org&gt;&quot;</code></pre>
+<pre class="r"><code>citation(&quot;rredlist&quot;)</code></pre>
+<pre><code>## 
+## To cite package &#39;rredlist&#39; in publications use:
+## 
+##   Scott Chamberlain (2020). rredlist: &#39;IUCN&#39; Red List Client. R package
+##   version 0.6.0. https://CRAN.R-project.org/package=rredlist
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {rredlist: &#39;IUCN&#39; Red List Client},
+##     author = {Scott Chamberlain},
+##     year = {2020},
+##     note = {R package version 0.6.0},
+##     url = {https://CRAN.R-project.org/package=rredlist},
+##   }</code></pre>
+<pre class="r"><code>citation(&quot;tidyverse&quot;)</code></pre>
+<pre><code>## 
+##   Wickham et al., (2019). Welcome to the tidyverse. Journal of Open
+##   Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Article{,
+##     title = {Welcome to the {tidyverse}},
+##     author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D&#39;Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+##     year = {2019},
+##     journal = {Journal of Open Source Software},
+##     volume = {4},
+##     number = {43},
+##     pages = {1686},
+##     doi = {10.21105/joss.01686},
+##   }</code></pre>
 <p>System details and libraries used:</p>
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>## R version 4.0.2 (2020-06-22)
