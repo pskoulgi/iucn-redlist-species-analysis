@@ -39,5 +39,5 @@ vignettes/*.pdf
 .Renviron
 
 # Data and result files
-/data
+# /data
 # /results
