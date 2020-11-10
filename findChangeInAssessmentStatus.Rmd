@@ -127,14 +127,14 @@ pre2010Status <- withFullAssessmentHistory %>%
 It is the status of the species at the most recent assessment year. For species which haven't been assessed since 2010, their status now is taken to be their status at 2010. It follows that such species are counted as having their status unchanged from 2010 to now.
 
 ```{r status now, message=FALSE}
-withPreAndPost2010Status <- left_join(pre2010Status, withFullAssessmentHistory, by = "sciName") %>% 
+nowStatus <- withFullAssessmentHistory %>% 
   group_by(sciName) %>% 
   summarise(
-    status2010 = status2010,
-    status2010AssessmentYear = status2010AssessmentYear,
     statusNow = .data$cat_reassigned[.data$year == max(year)],
     statusNowAssessmentYear = max(year)
   )
+
+withPreAndPost2010Status <- left_join(pre2010Status, nowStatus, by = "sciName")
 ```
 
 A tally of species that were assessed before 2010 but not since, which have been counted as having their status unchanged since 2010:
@@ -143,8 +143,7 @@ A tally of species that were assessed before 2010 but not since, which have been
 print(
   paste(
     nrow(withPreAndPost2010Status %>% 
-           filter(statusNowAssessmentYear <= 2010) %>%
-           distinct(sciName)),
+           filter(statusNowAssessmentYear <= 2010)),
     ": Number of species assessed before 2010 but not since"
   ),
   quote = FALSE
@@ -170,13 +169,15 @@ min(withPreAndPost2010Status$statusNow)
 ### Calculate percentage change
 
 ```{r percent change calculation}
-numEndangeredBefore2010 <- withPreAndPost2010Status %>% 
+endangeredBefore2010 <- withPreAndPost2010Status %>% 
   mutate(isEndangered = status2010 >= levels(.data$status2010)[4]) %>% 
-  filter(isEndangered == TRUE) %>% 
+  filter(isEndangered == TRUE)
+numEndangeredBefore2010 <- endangeredBefore2010 %>% 
   nrow()
-numEndangeredNow <- withPreAndPost2010Status %>% 
+endangeredNow <- withPreAndPost2010Status %>% 
   mutate(isEndangered = statusNow >= levels(.data$statusNow)[4]) %>% 
-  filter(isEndangered == TRUE) %>% 
+  filter(isEndangered == TRUE)
+numEndangeredNow <- endangeredNow %>% 
   nrow()
 
 print(

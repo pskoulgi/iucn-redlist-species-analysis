@@ -1764,25 +1764,24 @@ print(
 <div id="find-status-now" class="section level2">
 <h2>Find status now</h2>
 <p>It is the status of the species at the most recent assessment year. For species which haven’t been assessed since 2010, their status now is taken to be their status at 2010. It follows that such species are counted as having their status unchanged from 2010 to now.</p>
-<pre class="r"><code>withPreAndPost2010Status &lt;- left_join(pre2010Status, withFullAssessmentHistory, by = &quot;sciName&quot;) %&gt;% 
+<pre class="r"><code>nowStatus &lt;- withFullAssessmentHistory %&gt;% 
   group_by(sciName) %&gt;% 
   summarise(
-    status2010 = status2010,
-    status2010AssessmentYear = status2010AssessmentYear,
     statusNow = .data$cat_reassigned[.data$year == max(year)],
     statusNowAssessmentYear = max(year)
-  )</code></pre>
+  )
+
+withPreAndPost2010Status &lt;- left_join(pre2010Status, nowStatus, by = &quot;sciName&quot;)</code></pre>
 <p>A tally of species that were assessed before 2010 but not since, which have been counted as having their status unchanged since 2010:</p>
 <pre class="r"><code>print(
   paste(
     nrow(withPreAndPost2010Status %&gt;% 
-           filter(statusNowAssessmentYear &lt;= 2010) %&gt;%
-           distinct(sciName)),
+           filter(statusNowAssessmentYear &lt;= 2010)),
     &quot;: Number of species assessed before 2010 but not since&quot;
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 150 : Number of species assessed before 2010 but not since</code></pre>
+<pre><code>## [1] 153 : Number of species assessed before 2010 but not since</code></pre>
 </div>
 <div id="find-percentage-change-in-status-2010---now" class="section level2">
 <h2>Find percentage change in status (2010 - now)</h2>
@@ -1802,13 +1801,15 @@ print(
 </div>
 <div id="calculate-percentage-change" class="section level3">
 <h3>Calculate percentage change</h3>
-<pre class="r"><code>numEndangeredBefore2010 &lt;- withPreAndPost2010Status %&gt;% 
+<pre class="r"><code>endangeredBefore2010 &lt;- withPreAndPost2010Status %&gt;% 
   mutate(isEndangered = status2010 &gt;= levels(.data$status2010)[4]) %&gt;% 
-  filter(isEndangered == TRUE) %&gt;% 
+  filter(isEndangered == TRUE)
+numEndangeredBefore2010 &lt;- endangeredBefore2010 %&gt;% 
   nrow()
-numEndangeredNow &lt;- withPreAndPost2010Status %&gt;% 
+endangeredNow &lt;- withPreAndPost2010Status %&gt;% 
   mutate(isEndangered = statusNow &gt;= levels(.data$statusNow)[4]) %&gt;% 
-  filter(isEndangered == TRUE) %&gt;% 
+  filter(isEndangered == TRUE)
+numEndangeredNow &lt;- endangeredNow %&gt;% 
   nrow()
 
 print(
@@ -1818,7 +1819,7 @@ print(
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 11.0671936758893 : Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians</code></pre>
+<pre><code>## [1] 5.83333333333333 : Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians</code></pre>
 </div>
 </div>
 </div>
