@@ -33,7 +33,7 @@ Before proceeding:
 We first check for how many of the species are `'extinct'` and which one/s. Turns out it is one species, _Raorchestes travancoricus_, which was thought to be extinct but was later rediscovered.
 
 ```{r load data}
-rawData <- read.csv("results/redlistRead_synRuns_mamlrptlMixupFixed.csv")
+rawData <- read.csv("results/redlistRead.csv")
 extinctSpecies <- rawData %>% drop_na(year) %>% 
   filter(str_detect(str_to_lower(category), 'extinct')) %>% 
   select(sciName)

@@ -2806,7 +2806,7 @@ div.tocify {
 <li>Threat level ordering is according to <a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">IUCN’s criteria</a>. Here we consider threat level <code>&quot;vulnerable&quot;</code> or higher as “endangered”, and we calculate the percentage change in number of those.</li>
 </ul>
 <p>We first check for how many of the species are <code>&#39;extinct&#39;</code> and which one/s. Turns out it is one species, <em>Raorchestes travancoricus</em>, which was thought to be extinct but was later rediscovered.</p>
-<pre class="r"><code>rawData &lt;- read.csv(&quot;results/redlistRead_synRuns_mamlrptlMixupFixed.csv&quot;)
+<pre class="r"><code>rawData &lt;- read.csv(&quot;results/redlistRead.csv&quot;)
 extinctSpecies &lt;- rawData %&gt;% drop_na(year) %&gt;% 
   filter(str_detect(str_to_lower(category), &#39;extinct&#39;)) %&gt;% 
   select(sciName)
