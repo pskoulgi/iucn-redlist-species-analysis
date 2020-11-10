@@ -3,6 +3,8 @@ title: "Western Ghats species: Changes in IUCN Red List status from 2010 to now"
 output:
   html_document:
     toc: true
+    toc_float: true
+    number_sections: true
     df_print: paged
   pdf_document: default
 ---
@@ -65,7 +67,7 @@ assessmentHistories <- rawData %>%
                   "endangered", "criticallyEndangered", "extinct")
   )
 ```
-# Find change in status from 2010 to now
+# Find change in endangered species from 2010 to now
 
 Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the year 2010 status as the one prior, and closest, in time to it. We choose the most recent status as the status now.
 
@@ -150,7 +152,7 @@ print(
 )
 ```
 
-## Find percentage change in status (2010 - now)
+## Find percentage change in number of endangered species (2010 - now)
 
 For assessment in 2010 and now, label species as endangered if their assessed threat level is `"vulnerable"` or higher ([see IUCN reference](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)). Count them and calculate percentage change in total numbers as follows:
 
