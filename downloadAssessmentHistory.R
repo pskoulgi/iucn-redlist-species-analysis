@@ -13,11 +13,11 @@ fish <- read.csv("data/redlist_Fish_IDName.csv") %>%
   distinct(BINOMIAL, .keep_all = TRUE) %>% 
   mutate(taxon = "fish", .keep_all = TRUE) %>% 
   select(origId = HShedID, sciName = BINOMIAL, taxon)
-reptiles <- read.csv("data/redlist_Mammals_IDName.csv") %>% 
+reptiles <- read.csv("data/redlist_Reptiles_IDName.csv") %>% 
   distinct(binomial, .keep_all = TRUE) %>% 
   mutate(taxon = "rptl") %>% 
   select(origId = id_no, sciName = binomial, taxon)
-mammals<- read.csv("data/redlist_Reptiles_IDName.csv") %>% 
+mammals<- read.csv("data/redlist_Mammals_IDName.csv") %>% 
   distinct(binomial, .keep_all = TRUE) %>% 
   mutate(taxon = "maml") %>% 
   select(origId = id_no, sciName = binomial, taxon)
