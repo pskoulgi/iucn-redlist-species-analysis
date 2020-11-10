@@ -33,7 +33,7 @@ Before proceeding:
 We first check for how many of the species are `'extinct'` and which one/s. Turns out it is one species, _Raorchestes travancoricus_, which was thought to be extinct but was later rediscovered.
 
 ```{r load data}
-rawData <- read.csv("results/redlistRead_complete_synonymRuns.csv")
+rawData <- read.csv("results/redlistRead_synRuns_mamlrptlMixupFixed.csv")
 extinctSpecies <- rawData %>% drop_na(year) %>% 
   filter(str_detect(str_to_lower(category), 'extinct')) %>% 
   select(sciName)
@@ -119,7 +119,8 @@ pre2010Status <- withFullAssessmentHistory %>%
   filter(year <= 2010) %>% 
   group_by(sciName) %>% 
   summarise(
-    status2010 = .data$cat_reassigned[.data$year == max(year)],
+    taxon = unique(.data$taxon),
+    status2010 = max(.data$cat_reassigned[.data$year == max(year)]),
     status2010AssessmentYear = max(year)
   )
 ```
@@ -132,7 +133,8 @@ It is the status of the species at the most recent assessment year. For species 
 nowStatus <- withFullAssessmentHistory %>% 
   group_by(sciName) %>% 
   summarise(
-    statusNow = .data$cat_reassigned[.data$year == max(year)],
+    taxon = unique(.data$taxon),
+    statusNow = max(.data$cat_reassigned[.data$year == max(year)]),
     statusNowAssessmentYear = max(year)
   )
 
@@ -190,6 +192,36 @@ print(
   quote = FALSE
 )
 ```
+## Threat upgrades and downgrades to endangered (2010 - now)
+
+Some species had their threat levels upgraded to or downgraded from "endangered" (see [IUCN's ordering](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)).
+
+Those with threat level upgraded to endangered were:
+
+```{r}
+upgraded <- withPreAndPost2010Status %>% 
+  mutate(isUpgraded = (statusNow >= levels(.data$statusNow)[4] & 
+                         status2010 < levels(.data$statusNow)[4])) %>% 
+  filter(isUpgraded == TRUE)
+
+upgraded %>%
+  select(sciName, taxon.x, status2010, statusNow) %>% 
+  arrange(taxon.x)
+```
+
+Those with threat level downgraded from endangered were:
+
+```{r}
+downgraded <- withPreAndPost2010Status %>% 
+  mutate(isDowngraded = (status2010 >= levels(.data$statusNow)[4] & 
+                           statusNow < levels(.data$statusNow)[4])) %>% 
+  filter(isDowngraded == TRUE)
+
+downgraded %>%
+  select(sciName, taxon.x, status2010, statusNow) %>% 
+  arrange(taxon.x)
+```
+
 
 # Database citation & details of system and libraries used
 Citation of the IUCN dataset version, main packages used:

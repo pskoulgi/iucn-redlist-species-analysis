@@ -2806,7 +2806,7 @@ div.tocify {
 <li>Threat level ordering is according to <a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">IUCN’s criteria</a>. Here we consider threat level <code>&quot;vulnerable&quot;</code> or higher as “endangered”, and we calculate the percentage change in number of those.</li>
 </ul>
 <p>We first check for how many of the species are <code>&#39;extinct&#39;</code> and which one/s. Turns out it is one species, <em>Raorchestes travancoricus</em>, which was thought to be extinct but was later rediscovered.</p>
-<pre class="r"><code>rawData &lt;- read.csv(&quot;results/redlistRead_complete_synonymRuns.csv&quot;)
+<pre class="r"><code>rawData &lt;- read.csv(&quot;results/redlistRead_synRuns_mamlrptlMixupFixed.csv&quot;)
 extinctSpecies &lt;- rawData %&gt;% drop_na(year) %&gt;% 
   filter(str_detect(str_to_lower(category), &#39;extinct&#39;)) %&gt;% 
   select(sciName)
@@ -2849,7 +2849,7 @@ rawData %&gt;% drop_na(year) %&gt;%
 <pre class="r"><code>rawData %&gt;% filter(is.na(year)) %&gt;% select(-origId, -code)</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["category"],"name":[4],"type":["chr"],"align":["left"]},{"label":["synonymousSpeciesUsed"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Megalaima zeylanica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Megalaima rubricapillus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Cuculus sparverioides","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sterna nilotica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Ichthyophaga ichthyaetus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Mesophoyx intermedia","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Monticola cinclorhynchus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Cyornis pallipes","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sturnus contra","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Motacilla madaraspatensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Copsychus malabaricus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Coturnix chinensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Hirundo daurica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Chelenodon patoca","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Plotosus canius","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mesoneomacheilus herrei","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Pseudosphronemus cupanus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Garra gotyla stenorhynchus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Homaloptera santhampariensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mystus occulatus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Nemacheilus guntheri","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteocheilus longidorsalis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osterobrama bakeri","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Schistura sharavatiensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Carinatetraodon imitator","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mesonemacheilus pambarensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Salmophasi novacula3","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Garra bicornata","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Puntius sarana subnasutus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Thynnichthys sandkohl","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Indorenectus evezardi","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"N shimogensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteobroma neilli","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteocheilus naohil","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Silonia childrenii","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Monopterusdicus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Miniopterus fuliginosus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Thalassophina viperina","2":"maml","3":"NA","4":"NA","5":"none available"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["category"],"name":[4],"type":["chr"],"align":["left"]},{"label":["synonymousSpeciesUsed"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Megalaima zeylanica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Megalaima rubricapillus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Cuculus sparverioides","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sterna nilotica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Ichthyophaga ichthyaetus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Mesophoyx intermedia","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Monticola cinclorhynchus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Cyornis pallipes","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sturnus contra","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Motacilla madaraspatensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Copsychus malabaricus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Coturnix chinensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Hirundo daurica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Chelenodon patoca","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Plotosus canius","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mesoneomacheilus herrei","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Pseudosphronemus cupanus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Garra gotyla stenorhynchus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Homaloptera santhampariensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mystus occulatus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Nemacheilus guntheri","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteocheilus longidorsalis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osterobrama bakeri","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Schistura sharavatiensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Carinatetraodon imitator","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mesonemacheilus pambarensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Salmophasi novacula3","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Garra bicornata","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Puntius sarana subnasutus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Thynnichthys sandkohl","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Indorenectus evezardi","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"N shimogensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteobroma neilli","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteocheilus naohil","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Silonia childrenii","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Monopterusdicus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Thalassophina viperina","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Miniopterus fuliginosus","2":"maml","3":"NA","4":"NA","5":"none available"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <div id="filter-to-species-assessed-before-2010" class="section level2">
@@ -2888,7 +2888,8 @@ print(
   filter(year &lt;= 2010) %&gt;% 
   group_by(sciName) %&gt;% 
   summarise(
-    status2010 = .data$cat_reassigned[.data$year == max(year)],
+    taxon = unique(.data$taxon),
+    status2010 = max(.data$cat_reassigned[.data$year == max(year)]),
     status2010AssessmentYear = max(year)
   )</code></pre>
 </div>
@@ -2898,7 +2899,8 @@ print(
 <pre class="r"><code>nowStatus &lt;- withFullAssessmentHistory %&gt;% 
   group_by(sciName) %&gt;% 
   summarise(
-    statusNow = .data$cat_reassigned[.data$year == max(year)],
+    taxon = unique(.data$taxon),
+    statusNow = max(.data$cat_reassigned[.data$year == max(year)]),
     statusNowAssessmentYear = max(year)
   )
 
@@ -2912,7 +2914,7 @@ withPreAndPost2010Status &lt;- left_join(pre2010Status, nowStatus, by = &quot;sc
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 153 : Number of species assessed before 2010 but not since</code></pre>
+<pre><code>## [1] 150 : Number of species assessed before 2010 but not since</code></pre>
 </div>
 <div id="find-percentage-change-in-number-of-endangered-species-2010---now" class="section level2">
 <h2><span class="header-section-number">2.4</span> Find percentage change in number of endangered species (2010 - now)</h2>
@@ -2950,7 +2952,39 @@ print(
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 5.83333333333333 : Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians</code></pre>
+<pre><code>## [1] 5.88235294117647 : Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians</code></pre>
+</div>
+</div>
+<div id="threat-upgrades-and-downgrades-to-endangered-2010---now" class="section level2">
+<h2><span class="header-section-number">2.5</span> Threat upgrades and downgrades to endangered (2010 - now)</h2>
+<p>Some species had their threat levels upgraded to or downgraded from “endangered” (see <a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">IUCN’s ordering</a>).</p>
+<p>Those with threat level upgraded to endangered were:</p>
+<pre class="r"><code>upgraded &lt;- withPreAndPost2010Status %&gt;% 
+  mutate(isUpgraded = (statusNow &gt;= levels(.data$statusNow)[4] &amp; 
+                         status2010 &lt; levels(.data$statusNow)[4])) %&gt;% 
+  filter(isUpgraded == TRUE)
+
+upgraded %&gt;%
+  select(sciName, taxon.x, status2010, statusNow) %&gt;% 
+  arrange(taxon.x)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon.x"],"name":[2],"type":["chr"],"align":["left"]},{"label":["status2010"],"name":[3],"type":["ord"],"align":["right"]},{"label":["statusNow"],"name":[4],"type":["ord"],"align":["right"]}],"data":[{"1":"Anthus nilghiriensis","2":"bird","3":"nearThreatened","4":"vulnerable"},{"1":"Aquila nipalensis","2":"bird","3":"leastConcern","4":"endangered"},{"1":"Aquila rapax","2":"bird","3":"leastConcern","4":"vulnerable"},{"1":"Aythya ferina","2":"bird","3":"leastConcern","4":"vulnerable"},{"1":"Buceros bicornis","2":"bird","3":"nearThreatened","4":"vulnerable"},{"1":"Sterna acuticauda","2":"bird","3":"nearThreatened","4":"endangered"},{"1":"Monopterus indicus","2":"fish","3":"nearThreatened","4":"vulnerable"},{"1":"Nemacheilus petrubanarescui","2":"fish","3":"nearThreatened","4":"endangered"},{"1":"Pseudosphromenus dayi","2":"fish","3":"nearThreatened","4":"vulnerable"},{"1":"Macaca radiata","2":"maml","3":"leastConcern","4":"vulnerable"},{"1":"Manis crassicaudata","2":"maml","3":"nearThreatened","4":"endangered"},{"1":"Panthera pardus","2":"maml","3":"nearThreatened","4":"vulnerable"},{"1":"Platyplectrurus madurensis","2":"rptl","3":"other","4":"endangered"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Those with threat level downgraded from endangered were:</p>
+<pre class="r"><code>downgraded &lt;- withPreAndPost2010Status %&gt;% 
+  mutate(isDowngraded = (status2010 &gt;= levels(.data$statusNow)[4] &amp; 
+                           statusNow &lt; levels(.data$statusNow)[4])) %&gt;% 
+  filter(isDowngraded == TRUE)
+
+downgraded %&gt;%
+  select(sciName, taxon.x, status2010, statusNow) %&gt;% 
+  arrange(taxon.x)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon.x"],"name":[2],"type":["chr"],"align":["left"]},{"label":["status2010"],"name":[3],"type":["ord"],"align":["right"]},{"label":["statusNow"],"name":[4],"type":["ord"],"align":["right"]}],"data":[{"1":"Falco naumanni","2":"bird","3":"vulnerable","4":"leastConcern"},{"1":"Horaglanis krishnai","2":"fish","3":"vulnerable","4":"other"},{"1":"Tor khudree","2":"fish","3":"endangered","4":"leastConcern"},{"1":"Herpestes fuscus","2":"maml","3":"vulnerable","4":"leastConcern"},{"1":"Prionailurus rubiginosus","2":"maml","3":"vulnerable","4":"nearThreatened"},{"1":"Ristella rurkii","2":"rptl","3":"vulnerable","4":"other"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
 </div>
 </div>
