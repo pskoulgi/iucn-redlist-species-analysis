@@ -2785,16 +2785,14 @@ div.tocify {
 
 
 <p>Use the status history data for each species and calculate the percentage change in number of endangered species from 2010 to now.</p>
-<p>This includes amphibian, reptile, fish, mammal and bird species list Srini shared with us.</p>
-<div id="load-libraries" class="section level2">
-<h2><span class="header-section-number">0.1</span> Load libraries</h2>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## Warning: replacing previous import &#39;vctrs::data_frame&#39; by &#39;tibble::data_frame&#39;
-## when loading &#39;dplyr&#39;</code></pre>
-<pre class="r"><code>library(rredlist)</code></pre>
+<p>This includes reptile, mammal and bird species lists Sheetal shared with us.</p>
+<div id="load-libraries" class="section level1">
+<h1><span class="header-section-number">1</span> Load libraries</h1>
+<pre class="r"><code>library(tidyverse)
+library(rredlist)</code></pre>
 </div>
 <div id="load-and-reorganize-status-history-data" class="section level1">
-<h1><span class="header-section-number">1</span> Load and reorganize status history data</h1>
+<h1><span class="header-section-number">2</span> Load and reorganize status history data</h1>
 <p>Before proceeding:</p>
 <ul>
 <li>Species which don’t appear in the Red List return <code>NA</code>, those are dropped
@@ -2805,19 +2803,19 @@ div.tocify {
 <li>We are only interested in changes between “endangered” and non-“endangered” status, but the IUCN Red List web API returns several more categories in status histories. Those categories are appropriately collapsed and ordered before proceeding.</li>
 <li>Threat level ordering is according to <a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">IUCN’s criteria</a>. Here we consider threat level <code>&quot;vulnerable&quot;</code> or higher as “endangered”, and we calculate the percentage change in number of those.</li>
 </ul>
-<p>We first check for how many of the species are <code>&#39;extinct&#39;</code> and which one/s. Turns out it is one species, <em>Raorchestes travancoricus</em>, which was thought to be extinct but was later rediscovered.</p>
-<pre class="r"><code>rawData &lt;- read.csv(&quot;results/redlistRead.csv&quot;)
+<p>We first check for how many of the species are <code>&#39;extinct&#39;</code> and which one/s. Turns out none of them are.</p>
+<pre class="r"><code>rawData &lt;- read.csv(&quot;results/redlistRead_CIL.csv&quot;)
 extinctSpecies &lt;- rawData %&gt;% drop_na(year) %&gt;% 
   filter(str_detect(str_to_lower(category), &#39;extinct&#39;)) %&gt;% 
   select(sciName)
-rawData %&gt;% drop_na(year) %&gt;% 
-  filter(sciName == extinctSpecies$sciName) %&gt;% 
-  select(sciName, taxon, year, category, synonymousSpeciesUsed)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["category"],"name":[4],"type":["chr"],"align":["left"]},{"label":["synonymousSpeciesUsed"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Philautus travancoricus","2":"amph","3":"2015","4":"Endangered","5":"Raorchestes travancoricus"},{"1":"Philautus travancoricus","2":"amph","3":"2004","4":"Extinct","5":"Raorchestes travancoricus"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+print(
+  paste(
+    nrow(extinctSpecies),
+    &quot;: Number of extinct species&quot;
+  ),
+  quote = FALSE
+)</code></pre>
+<pre><code>## [1] 0 : Number of extinct species</code></pre>
 <p>Categories of threat status are collapsed to fewer levels and ordered as desired, according to <a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">IUCN’s criteria</a>.</p>
 <pre class="r"><code>assessmentHistories &lt;- rawData %&gt;% 
   drop_na(year) %&gt;% 
@@ -2842,18 +2840,18 @@ rawData %&gt;% drop_na(year) %&gt;%
   )</code></pre>
 </div>
 <div id="find-change-in-endangered-species-from-2010-to-now" class="section level1">
-<h1><span class="header-section-number">2</span> Find change in endangered species from 2010 to now</h1>
+<h1><span class="header-section-number">3</span> Find change in endangered species from 2010 to now</h1>
 <p>Assessments happen for different species at different times, so there is no fixed schedule of Red List updation. Hence, for our purposes, we choose the year 2010 status as the one prior, and closest, in time to it. We choose the most recent status as the status now.</p>
 <p>For species that were assessed before 2010 and not after, we count them to have had their status unchanged.</p>
-<p>Some species (38 of them) that didn’t have valid status histories (including after trying their synonyms) will be dropped from this change claculations.</p>
-<pre class="r"><code>rawData %&gt;% filter(is.na(year)) %&gt;% select(-origId, -code)</code></pre>
+<p>Some species (86 of them) that didn’t have valid status histories (including after trying their synonyms) will be dropped from this change claculations.</p>
+<pre class="r"><code>rawData %&gt;% filter(is.na(year)) %&gt;% select(-code)</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["category"],"name":[4],"type":["chr"],"align":["left"]},{"label":["synonymousSpeciesUsed"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Megalaima zeylanica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Megalaima rubricapillus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Cuculus sparverioides","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sterna nilotica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Ichthyophaga ichthyaetus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Mesophoyx intermedia","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Monticola cinclorhynchus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Cyornis pallipes","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sturnus contra","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Motacilla madaraspatensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Copsychus malabaricus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Coturnix chinensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Hirundo daurica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Chelenodon patoca","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Plotosus canius","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mesoneomacheilus herrei","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Pseudosphronemus cupanus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Garra gotyla stenorhynchus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Homaloptera santhampariensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mystus occulatus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Nemacheilus guntheri","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteocheilus longidorsalis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osterobrama bakeri","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Schistura sharavatiensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Carinatetraodon imitator","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Mesonemacheilus pambarensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Salmophasi novacula3","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Garra bicornata","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Puntius sarana subnasutus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Thynnichthys sandkohl","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Indorenectus evezardi","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"N shimogensis","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteobroma neilli","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Osteocheilus naohil","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Silonia childrenii","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Monopterusdicus","2":"fish","3":"NA","4":"NA","5":"none available"},{"1":"Thalassophina viperina","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Miniopterus fuliginosus","2":"maml","3":"NA","4":"NA","5":"none available"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["category"],"name":[4],"type":["chr"],"align":["left"]},{"label":["synonymousSpeciesUsed"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Anas penelope","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Anas clypeata","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Dendrocopos mahrattensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Celeus brachyurus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Megalaima haemacephala","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Cuculus varius","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Stigmatopelia senegalensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Amaurornis akool","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Vanellus malarbaricus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sterna caspia","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sterna bengalensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Pernis ptilorhyncus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Ictinaetus malayensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Aquila fasciatus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Phalacrocorax niger","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Casmerodius albus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Corvus levaillantii","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Zoothera citrina","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Luscinia brunnea","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sturnus malabaricus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sturnus pagodarum","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sturnus roseus","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Macholophus xanthogenys","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Hirundo rupestris","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Hirundo concolor","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Hirundo fluvicola","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Acrocephalus aedon","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Hippolais rama","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Turdoides caudata","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Turdoides malcolmi","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Sylvia althaea","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Mirafra cantillans","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Nectarinia zeylonica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Nectarinia asiatica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Petronia xanthocollis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Lonchura malabarica","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Melophus lathami","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Aquila hastata","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Macronous gularis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Coturnix chinensis","2":"bird","3":"NA","4":"NA","5":"none available"},{"1":"Calotes rouxii","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Astrotia stokesii","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Enhydrina schistosa","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Hydrophis platrurus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Lapemis curtus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Dryocalamus gracilis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Uropeltis ocellatus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Hemidactylus yajurvedi","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Hemidactylus heemachandri","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Hemidactylus chipkali","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Hemidactylus kangerensis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Opisops microlepis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Eutropi beddomii","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Eutropi allapallensis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Indotyphlops braminus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Indotyphlops porrectus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Eryx conicus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Eryx johnii","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Elachistodon westermanii","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Echis carinatus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Trineresurus graminus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Bungarus cearuleus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Bungarus sindanus walli","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Calliophis melanirus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Amphiesma stolatum","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Atretium stolatum","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Rhybdophis plumbicolor","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Fowlea piscator","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Ahaetula nasuta","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Argirogena fasciolata","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Boiga flaviviridis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Chrysopelea ornata","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Coelognathus helena helena","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Coelognathus helena monticolaris","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Coelognatus helena nigriangularis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Dendralaphis tristis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Dryocamalus nympha","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Lycodon aulicus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Lycodon stritus","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Oligodon arnensis","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Ptyas Mucosa","2":"rptl","3":"NA","4":"NA","5":"none available"},{"1":"Megaderma lyra","2":"maml","3":"NA","4":"NA","5":"none available"},{"1":"Aonyx cinerea","2":"maml","3":"NA","4":"NA","5":"none available"},{"1":"Semnopithecus entullus","2":"maml","3":"NA","4":"NA","5":"none available"},{"1":"Gazella  bennettii","2":"maml","3":"NA","4":"NA","5":"none available"},{"1":"Rucervus duvacelii","2":"maml","3":"NA","4":"NA","5":"none available"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <div id="filter-to-species-assessed-before-2010" class="section level2">
-<h2><span class="header-section-number">2.1</span> Filter to species assessed before 2010</h2>
+<h2><span class="header-section-number">3.1</span> Filter to species assessed before 2010</h2>
 <p>Percentage change in number of endangered species from 2010 to now can be calculated over only those species that have been assessed before 2010. Hence, first we find species that have been assessed before 2010 .</p>
 <pre class="r"><code>assessedBefore2010 &lt;- assessmentHistories %&gt;% filter(year &lt;= 2010) %&gt;% 
   distinct(sciName)
@@ -2871,7 +2869,7 @@ print(
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 724 : Num. species assessed before 2010</code></pre>
+<pre><code>## [1] 394 : Num. species assessed before 2010</code></pre>
 <pre class="r"><code>print(
   paste(
     nrow(assessmentHistories %&gt;% distinct(sciName)),
@@ -2879,10 +2877,10 @@ print(
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 1090 : Total number of valid species in our dataset</code></pre>
+<pre><code>## [1] 467 : Total number of valid species in our dataset</code></pre>
 </div>
 <div id="find-status-in-2010" class="section level2">
-<h2><span class="header-section-number">2.2</span> Find status in 2010</h2>
+<h2><span class="header-section-number">3.2</span> Find status in 2010</h2>
 <p>It is the status of the species at the maximum assessment year before 2010 (i.e., most recent year before 2010).</p>
 <pre class="r"><code>pre2010Status &lt;- withFullAssessmentHistory %&gt;% 
   filter(year &lt;= 2010) %&gt;% 
@@ -2894,7 +2892,7 @@ print(
   )</code></pre>
 </div>
 <div id="find-status-now" class="section level2">
-<h2><span class="header-section-number">2.3</span> Find status now</h2>
+<h2><span class="header-section-number">3.3</span> Find status now</h2>
 <p>It is the status of the species at the most recent assessment year. For species which haven’t been assessed since 2010, their status now is taken to be their status at 2010. It follows that such species are counted as having their status unchanged from 2010 to now.</p>
 <pre class="r"><code>nowStatus &lt;- withFullAssessmentHistory %&gt;% 
   group_by(sciName) %&gt;% 
@@ -2914,26 +2912,26 @@ withPreAndPost2010Status &lt;- left_join(pre2010Status, nowStatus, by = &quot;sc
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 150 : Number of species assessed before 2010 but not since</code></pre>
+<pre><code>## [1] 28 : Number of species assessed before 2010 but not since</code></pre>
 </div>
 <div id="find-percentage-change-in-number-of-endangered-species-2010---now" class="section level2">
-<h2><span class="header-section-number">2.4</span> Find percentage change in number of endangered species (2010 - now)</h2>
+<h2><span class="header-section-number">3.4</span> Find percentage change in number of endangered species (2010 - now)</h2>
 <p>For assessment in 2010 and now, label species as endangered if their assessed threat level is <code>&quot;vulnerable&quot;</code> or higher (<a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">see IUCN reference</a>). Count them and calculate percentage change in total numbers as follows:</p>
 <p><span class="math display">\[
 \text{Percentage change} = 100 \times\frac{N_{endangered \ now}  - N_{endangered \ @ \ 2010} }{N_{endangered \ @ \ 2010}} 
 \]</span></p>
 <div id="check-status-ordering" class="section level3">
-<h3><span class="header-section-number">2.4.1</span> Check status ordering</h3>
+<h3><span class="header-section-number">3.4.1</span> Check status ordering</h3>
 <p>The order of status level factors, from low to high, is (following <a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">IUCN’s ordering</a>):</p>
 <pre class="r"><code>min(withPreAndPost2010Status$status2010)</code></pre>
 <pre><code>## [1] other
-## 7 Levels: other &lt; leastConcern &lt; nearThreatened &lt; ... &lt; extinct</code></pre>
+## 6 Levels: other &lt; leastConcern &lt; nearThreatened &lt; ... &lt; criticallyEndangered</code></pre>
 <pre class="r"><code>min(withPreAndPost2010Status$statusNow)</code></pre>
 <pre><code>## [1] other
-## 7 Levels: other &lt; leastConcern &lt; nearThreatened &lt; ... &lt; extinct</code></pre>
+## 6 Levels: other &lt; leastConcern &lt; nearThreatened &lt; ... &lt; criticallyEndangered</code></pre>
 </div>
 <div id="calculate-percentage-change" class="section level3">
-<h3><span class="header-section-number">2.4.2</span> Calculate percentage change</h3>
+<h3><span class="header-section-number">3.4.2</span> Calculate percentage change</h3>
 <pre class="r"><code>endangeredBefore2010 &lt;- withPreAndPost2010Status %&gt;% 
   mutate(isEndangered = status2010 &gt;= levels(.data$status2010)[4]) %&gt;% 
   filter(isEndangered == TRUE)
@@ -2948,15 +2946,15 @@ numEndangeredNow &lt;- endangeredNow %&gt;%
 print(
   paste(
     100 * (numEndangeredNow - numEndangeredBefore2010) / numEndangeredBefore2010,
-    &quot;: Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians&quot;
+    &quot;: Percentage change in number of endangered species among birds, mammals and reptiles&quot;
   ),
   quote = FALSE
 )</code></pre>
-<pre><code>## [1] 5.88235294117647 : Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians</code></pre>
+<pre><code>## [1] 18.5185185185185 : Percentage change in number of endangered species among birds, mammals and reptiles</code></pre>
 </div>
 </div>
 <div id="threat-upgrades-and-downgrades-to-endangered-2010---now" class="section level2">
-<h2><span class="header-section-number">2.5</span> Threat upgrades and downgrades to endangered (2010 - now)</h2>
+<h2><span class="header-section-number">3.5</span> Threat upgrades and downgrades to endangered (2010 - now)</h2>
 <p>Some species had their threat levels upgraded to or downgraded from “endangered” (see <a href="https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria">IUCN’s ordering</a>).</p>
 <p>Those with threat level upgraded to endangered were:</p>
 <pre class="r"><code>upgraded &lt;- withPreAndPost2010Status %&gt;% 
@@ -2969,7 +2967,7 @@ upgraded %&gt;%
   arrange(taxon.x)</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon.x"],"name":[2],"type":["chr"],"align":["left"]},{"label":["status2010"],"name":[3],"type":["ord"],"align":["right"]},{"label":["statusNow"],"name":[4],"type":["ord"],"align":["right"]}],"data":[{"1":"Anthus nilghiriensis","2":"bird","3":"nearThreatened","4":"vulnerable"},{"1":"Aquila nipalensis","2":"bird","3":"leastConcern","4":"endangered"},{"1":"Aquila rapax","2":"bird","3":"leastConcern","4":"vulnerable"},{"1":"Aythya ferina","2":"bird","3":"leastConcern","4":"vulnerable"},{"1":"Buceros bicornis","2":"bird","3":"nearThreatened","4":"vulnerable"},{"1":"Sterna acuticauda","2":"bird","3":"nearThreatened","4":"endangered"},{"1":"Monopterus indicus","2":"fish","3":"nearThreatened","4":"vulnerable"},{"1":"Nemacheilus petrubanarescui","2":"fish","3":"nearThreatened","4":"endangered"},{"1":"Pseudosphromenus dayi","2":"fish","3":"nearThreatened","4":"vulnerable"},{"1":"Macaca radiata","2":"maml","3":"leastConcern","4":"vulnerable"},{"1":"Manis crassicaudata","2":"maml","3":"nearThreatened","4":"endangered"},{"1":"Panthera pardus","2":"maml","3":"nearThreatened","4":"vulnerable"},{"1":"Platyplectrurus madurensis","2":"rptl","3":"other","4":"endangered"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon.x"],"name":[2],"type":["chr"],"align":["left"]},{"label":["status2010"],"name":[3],"type":["ord"],"align":["right"]},{"label":["statusNow"],"name":[4],"type":["ord"],"align":["right"]}],"data":[{"1":"Aquila nipalensis","2":"bird","3":"leastConcern","4":"endangered"},{"1":"Aquila rapax","2":"bird","3":"leastConcern","4":"vulnerable"},{"1":"Aythya ferina","2":"bird","3":"leastConcern","4":"vulnerable"},{"1":"Sterna acuticauda","2":"bird","3":"nearThreatened","4":"endangered"},{"1":"Macaca radiata","2":"maml","3":"leastConcern","4":"vulnerable"},{"1":"Manis crassicaudata","2":"maml","3":"nearThreatened","4":"endangered"},{"1":"Panthera pardus","2":"maml","3":"nearThreatened","4":"vulnerable"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Those with threat level downgraded from endangered were:</p>
@@ -2983,13 +2981,13 @@ downgraded %&gt;%
   arrange(taxon.x)</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon.x"],"name":[2],"type":["chr"],"align":["left"]},{"label":["status2010"],"name":[3],"type":["ord"],"align":["right"]},{"label":["statusNow"],"name":[4],"type":["ord"],"align":["right"]}],"data":[{"1":"Falco naumanni","2":"bird","3":"vulnerable","4":"leastConcern"},{"1":"Horaglanis krishnai","2":"fish","3":"vulnerable","4":"other"},{"1":"Tor khudree","2":"fish","3":"endangered","4":"leastConcern"},{"1":"Herpestes fuscus","2":"maml","3":"vulnerable","4":"leastConcern"},{"1":"Prionailurus rubiginosus","2":"maml","3":"vulnerable","4":"nearThreatened"},{"1":"Ristella rurkii","2":"rptl","3":"vulnerable","4":"other"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["sciName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["taxon.x"],"name":[2],"type":["chr"],"align":["left"]},{"label":["status2010"],"name":[3],"type":["ord"],"align":["right"]},{"label":["statusNow"],"name":[4],"type":["ord"],"align":["right"]}],"data":[{"1":"Falco naumanni","2":"bird","3":"vulnerable","4":"leastConcern"},{"1":"Prionailurus rubiginosus","2":"maml","3":"vulnerable","4":"nearThreatened"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
 </div>
 <div id="database-citation-details-of-system-and-libraries-used" class="section level1">
-<h1><span class="header-section-number">3</span> Database citation &amp; details of system and libraries used</h1>
+<h1><span class="header-section-number">4</span> Database citation &amp; details of system and libraries used</h1>
 <p>Citation of the IUCN dataset version, main packages used:</p>
 <pre class="r"><code>rl_citation()</code></pre>
 <pre><code>## [1] &quot;IUCN 2015. IUCN Red List of Threatened Species. Version 2020-2 &lt;www.iucnredlist.org&gt;&quot;</code></pre>

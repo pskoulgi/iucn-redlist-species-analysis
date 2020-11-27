@@ -11,11 +11,11 @@ output:
 
 Use the status history data for each species and calculate the percentage change in number of endangered species from 2010 to now.
 
-This includes amphibian, reptile, fish, mammal and bird species list Srini shared with us.
+This includes reptile, mammal and bird species lists Sheetal shared with us.
 
-## Load libraries
+# Load libraries
 
-```{r load libraries, message=FALSE}
+```{r load libraries, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(rredlist)
 ```
@@ -30,21 +30,25 @@ Before proceeding:
 * We are only interested in changes between "endangered" and non-"endangered" status, but the IUCN Red List web API returns several more categories in status histories. Those categories are appropriately collapsed and ordered before proceeding.
 * Threat level ordering is according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria). Here we consider threat level `"vulnerable"` or higher as "endangered", and we calculate the percentage change in number of those.
 
-We first check for how many of the species are `'extinct'` and which one/s. Turns out it is one species, _Raorchestes travancoricus_, which was thought to be extinct but was later rediscovered.
+We first check for how many of the species are `'extinct'` and which one/s. Turns out none of them are.
 
-```{r load data}
-rawData <- read.csv("results/redlistRead.csv")
+```{r load data, warning=FALSE}
+rawData <- read.csv("results/redlistRead_CIL.csv")
 extinctSpecies <- rawData %>% drop_na(year) %>% 
   filter(str_detect(str_to_lower(category), 'extinct')) %>% 
   select(sciName)
-rawData %>% drop_na(year) %>% 
-  filter(sciName == extinctSpecies$sciName) %>% 
-  select(sciName, taxon, year, category, synonymousSpeciesUsed)
+print(
+  paste(
+    nrow(extinctSpecies),
+    ": Number of extinct species"
+  ),
+  quote = FALSE
+)
 ```
 
 Categories of threat status are collapsed to fewer levels and ordered as desired, according to [IUCN's criteria](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria).
 
-```{r reorganize threat categories}
+```{r reorganize threat categories, warning=FALSE}
 assessmentHistories <- rawData %>% 
   drop_na(year) %>% 
   mutate(category = factor(category, ordered = TRUE)) %>% 
@@ -75,15 +79,15 @@ For species that were assessed before 2010 and not after, we count them to have 
 
 Some species (`r rawData %>% filter(is.na(year)) %>% nrow()` of them) that didn't have valid status histories (including after trying their synonyms) will be dropped from this change claculations.
 
-```{r list species without valid status histories}
-rawData %>% filter(is.na(year)) %>% select(-origId, -code)
+```{r list species without valid status histories, warning=FALSE}
+rawData %>% filter(is.na(year)) %>% select(-code)
 ```
 
 ## Filter to species assessed before 2010
 
 Percentage change in number of endangered species from 2010 to now can be calculated over only those species that have been assessed before 2010. Hence, first we find species that have been assessed before 2010
 .
-```{r assessed before 2010}
+```{r assessed before 2010, warning=FALSE}
 assessedBefore2010 <- assessmentHistories %>% filter(year <= 2010) %>% 
   distinct(sciName)
 
@@ -114,7 +118,7 @@ print(
 
 It is the status of the species at the maximum assessment year before 2010 (i.e., most recent year before 2010).
 
-```{r status 2010, message=FALSE}
+```{r status 2010, message=FALSE, warning=FALSE}
 pre2010Status <- withFullAssessmentHistory %>% 
   filter(year <= 2010) %>% 
   group_by(sciName) %>% 
@@ -129,7 +133,7 @@ pre2010Status <- withFullAssessmentHistory %>%
 
 It is the status of the species at the most recent assessment year. For species which haven't been assessed since 2010, their status now is taken to be their status at 2010. It follows that such species are counted as having their status unchanged from 2010 to now.
 
-```{r status now, message=FALSE}
+```{r status now, message=FALSE, warning=FALSE}
 nowStatus <- withFullAssessmentHistory %>% 
   group_by(sciName) %>% 
   summarise(
@@ -143,7 +147,7 @@ withPreAndPost2010Status <- left_join(pre2010Status, nowStatus, by = "sciName")
 
 A tally of species that were assessed before 2010 but not since, which have been counted as having their status unchanged since 2010:
 
-```{r status now is from before 2010}
+```{r status now is from before 2010, warning=FALSE}
 print(
   paste(
     nrow(withPreAndPost2010Status %>% 
@@ -165,14 +169,14 @@ $$
 ### Check status ordering
 The order of status level factors, from low to high, is (following [IUCN's ordering](https://www.iucnredlist.org/about/faqs#What%20are%20the%20Red%20List%20Categories%20and%20Criteria)):
 
-```{r display status order}
+```{r display status order, warning=FALSE}
 min(withPreAndPost2010Status$status2010)
 min(withPreAndPost2010Status$statusNow)
 ```
 
 ### Calculate percentage change
 
-```{r percent change calculation}
+```{r percent change calculation, warning=FALSE}
 endangeredBefore2010 <- withPreAndPost2010Status %>% 
   mutate(isEndangered = status2010 >= levels(.data$status2010)[4]) %>% 
   filter(isEndangered == TRUE)
@@ -187,7 +191,7 @@ numEndangeredNow <- endangeredNow %>%
 print(
   paste(
     100 * (numEndangeredNow - numEndangeredBefore2010) / numEndangeredBefore2010,
-    ": Percentage change in number of endangered species among birds, mammals, reptiles, fish, amphibians"
+    ": Percentage change in number of endangered species among birds, mammals and reptiles"
   ),
   quote = FALSE
 )
@@ -198,7 +202,7 @@ Some species had their threat levels upgraded to or downgraded from "endangered"
 
 Those with threat level upgraded to endangered were:
 
-```{r}
+```{r, warning=FALSE}
 upgraded <- withPreAndPost2010Status %>% 
   mutate(isUpgraded = (statusNow >= levels(.data$statusNow)[4] & 
                          status2010 < levels(.data$statusNow)[4])) %>% 
@@ -211,7 +215,7 @@ upgraded %>%
 
 Those with threat level downgraded from endangered were:
 
-```{r}
+```{r, warning=FALSE}
 downgraded <- withPreAndPost2010Status %>% 
   mutate(isDowngraded = (status2010 >= levels(.data$statusNow)[4] & 
                            statusNow < levels(.data$statusNow)[4])) %>% 
@@ -225,13 +229,13 @@ downgraded %>%
 
 # Database citation & details of system and libraries used
 Citation of the IUCN dataset version, main packages used:
-```{r}
+```{r, warning=FALSE}
 rl_citation()
 citation("rredlist")
 citation("tidyverse")
 ```
 
 System details and libraries used:
-```{r package details}
+```{r package details, warning=FALSE}
 sessionInfo()
 ```
