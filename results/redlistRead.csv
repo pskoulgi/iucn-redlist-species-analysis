@@ -313,6 +313,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 448,Anas clypeata,bird,1994,Lower Risk/least concern,LR/lc,Spatula clypeata
 448,Anas clypeata,bird,1988,Lower Risk/least concern,LR/lc,Spatula clypeata
 457,Anas acuta,bird,2019,Least Concern,LC,NA
+457,Anas acuta,bird,2017,Least Concern,LC,NA
 457,Anas acuta,bird,2016,Least Concern,LC,NA
 457,Anas acuta,bird,2013,Least Concern,LC,NA
 457,Anas acuta,bird,2012,Least Concern,LC,NA
@@ -331,7 +332,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 460,Anas querquedula,bird,2000,Lower Risk/least concern,LR/lc,Spatula querquedula
 460,Anas querquedula,bird,1994,Lower Risk/least concern,LR/lc,Spatula querquedula
 460,Anas querquedula,bird,1988,Lower Risk/least concern,LR/lc,Spatula querquedula
-467,Marmaronetta angustirostris,bird,2017,Vulnerable,VU,NA
 467,Marmaronetta angustirostris,bird,2016,Vulnerable,VU,NA
 467,Marmaronetta angustirostris,bird,2012,Vulnerable,VU,NA
 467,Marmaronetta angustirostris,bird,2008,Vulnerable,VU,NA
@@ -403,6 +403,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 510,Turnix suscitator,bird,2000,Lower Risk/least concern,LR/lc,NA
 510,Turnix suscitator,bird,1994,Lower Risk/least concern,LR/lc,NA
 510,Turnix suscitator,bird,1988,Lower Risk/least concern,LR/lc,NA
+538,Jynx torquilla,bird,2017,Least Concern,LC,NA
 538,Jynx torquilla,bird,2016,Least Concern,LC,NA
 538,Jynx torquilla,bird,2015,Least Concern,LC,NA
 538,Jynx torquilla,bird,2012,Least Concern,LC,NA
@@ -502,6 +503,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 779,Megalaima haemacephala,bird,2000,Lower Risk/least concern,LR/lc,Psilopogon haemacephalus
 779,Megalaima haemacephala,bird,1994,Lower Risk/least concern,LR/lc,Psilopogon haemacephalus
 779,Megalaima haemacephala,bird,1988,Lower Risk/least concern,LR/lc,Psilopogon haemacephalus
+943,Ocyceros griseus,bird,2020,Vulnerable,VU,NA
 943,Ocyceros griseus,bird,2019,Least Concern,LC,NA
 943,Ocyceros griseus,bird,2016,Least Concern,LC,NA
 943,Ocyceros griseus,bird,2012,Least Concern,LC,NA
@@ -511,6 +513,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 943,Ocyceros griseus,bird,2000,Lower Risk/least concern,LR/lc,NA
 943,Ocyceros griseus,bird,1994,Lower Risk/near threatened,LR/nt,NA
 943,Ocyceros griseus,bird,1988,Lower Risk/least concern,LR/lc,NA
+945,Ocyceros birostris,bird,2020,Least Concern,LC,NA
 945,Ocyceros birostris,bird,2016,Least Concern,LC,NA
 945,Ocyceros birostris,bird,2012,Least Concern,LC,NA
 945,Ocyceros birostris,bird,2009,Least Concern,LC,NA
@@ -526,6 +529,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 946,Anthracoceros coronatus,bird,2000,Lower Risk/near threatened,LR/nt,NA
 946,Anthracoceros coronatus,bird,1994,Lower Risk/near threatened,LR/nt,NA
 946,Anthracoceros coronatus,bird,1988,Lower Risk/least concern,LR/lc,NA
+952,Buceros bicornis,bird,2020,Vulnerable,VU,NA
 952,Buceros bicornis,bird,2018,Vulnerable,VU,NA
 952,Buceros bicornis,bird,2016,Near Threatened,NT,NA
 952,Buceros bicornis,bird,2015,Near Threatened,NT,NA
@@ -536,7 +540,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 952,Buceros bicornis,bird,2000,Lower Risk/near threatened,LR/nt,NA
 952,Buceros bicornis,bird,1994,Lower Risk/least concern,LR/lc,NA
 952,Buceros bicornis,bird,1988,Lower Risk/least concern,LR/lc,NA
-984,Upupa epops,bird,2019,Least Concern,LC,NA
+984,Upupa epops,bird,2020,Least Concern,LC,NA
 984,Upupa epops,bird,2016,Least Concern,LC,NA
 984,Upupa epops,bird,2012,Least Concern,LC,NA
 984,Upupa epops,bird,2009,Least Concern,LC,NA
@@ -600,7 +604,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 1103,Halcyon pileata,bird,2000,Lower Risk/least concern,LR/lc,NA
 1103,Halcyon pileata,bird,1994,Lower Risk/least concern,LR/lc,NA
 1103,Halcyon pileata,bird,1988,Lower Risk/least concern,LR/lc,NA
-1123,Todiramphus chloris,bird,2019,Least Concern,LC,NA
 1123,Todiramphus chloris,bird,2016,Least Concern,LC,NA
 1123,Todiramphus chloris,bird,2012,Least Concern,LC,NA
 1123,Todiramphus chloris,bird,2009,Least Concern,LC,NA
@@ -609,6 +612,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 1123,Todiramphus chloris,bird,2000,Lower Risk/least concern,LR/lc,NA
 1123,Todiramphus chloris,bird,1994,Lower Risk/least concern,LR/lc,NA
 1123,Todiramphus chloris,bird,1988,Lower Risk/least concern,LR/lc,NA
+1155,Ceryle rudis,bird,2017,Least Concern,LC,NA
 1155,Ceryle rudis,bird,2016,Least Concern,LC,NA
 1155,Ceryle rudis,bird,2012,Least Concern,LC,NA
 1155,Ceryle rudis,bird,2009,Least Concern,LC,NA
@@ -760,42 +764,41 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 1515,Loriculus vernalis,bird,2000,Lower Risk/least concern,LR/lc,NA
 1515,Loriculus vernalis,bird,1994,Lower Risk/least concern,LR/lc,NA
 1515,Loriculus vernalis,bird,1988,Lower Risk/least concern,LR/lc,NA
-1527,Psittacula eupatria,bird,2017,Near Threatened,NT,NA
-1527,Psittacula eupatria,bird,2016,Near Threatened,NT,NA
-1527,Psittacula eupatria,bird,2014,Near Threatened,NT,NA
-1527,Psittacula eupatria,bird,2013,Near Threatened,NT,NA
-1527,Psittacula eupatria,bird,2012,Least Concern,LC,NA
-1527,Psittacula eupatria,bird,2009,Least Concern,LC,NA
-1527,Psittacula eupatria,bird,2008,Least Concern,LC,NA
-1527,Psittacula eupatria,bird,2004,Least Concern,LC,NA
-1527,Psittacula eupatria,bird,2000,Lower Risk/least concern,LR/lc,NA
-1527,Psittacula eupatria,bird,1994,Lower Risk/least concern,LR/lc,NA
-1527,Psittacula eupatria,bird,1988,Lower Risk/least concern,LR/lc,NA
-1529,Psittacula krameri,bird,2018,Least Concern,LC,NA
-1529,Psittacula krameri,bird,2016,Least Concern,LC,NA
-1529,Psittacula krameri,bird,2012,Least Concern,LC,NA
-1529,Psittacula krameri,bird,2009,Least Concern,LC,NA
-1529,Psittacula krameri,bird,2008,Least Concern,LC,NA
-1529,Psittacula krameri,bird,2004,Least Concern,LC,NA
-1529,Psittacula krameri,bird,2000,Lower Risk/least concern,LR/lc,NA
-1529,Psittacula krameri,bird,1994,Lower Risk/least concern,LR/lc,NA
-1529,Psittacula krameri,bird,1988,Lower Risk/least concern,LR/lc,NA
-1535,Psittacula cyanocephala,bird,2016,Least Concern,LC,NA
-1535,Psittacula cyanocephala,bird,2012,Least Concern,LC,NA
-1535,Psittacula cyanocephala,bird,2009,Least Concern,LC,NA
-1535,Psittacula cyanocephala,bird,2008,Least Concern,LC,NA
-1535,Psittacula cyanocephala,bird,2004,Least Concern,LC,NA
-1535,Psittacula cyanocephala,bird,2000,Lower Risk/least concern,LR/lc,NA
-1535,Psittacula cyanocephala,bird,1994,Lower Risk/least concern,LR/lc,NA
-1535,Psittacula cyanocephala,bird,1988,Lower Risk/least concern,LR/lc,NA
-1537,Psittacula columboides,bird,2016,Least Concern,LC,NA
-1537,Psittacula columboides,bird,2012,Least Concern,LC,NA
-1537,Psittacula columboides,bird,2009,Least Concern,LC,NA
-1537,Psittacula columboides,bird,2008,Least Concern,LC,NA
-1537,Psittacula columboides,bird,2004,Least Concern,LC,NA
-1537,Psittacula columboides,bird,2000,Lower Risk/least concern,LR/lc,NA
-1537,Psittacula columboides,bird,1994,Lower Risk/least concern,LR/lc,NA
-1537,Psittacula columboides,bird,1988,Lower Risk/least concern,LR/lc,NA
+1527,Psittacula eupatria,bird,2016,Near Threatened,NT,Palaeornis eupatria
+1527,Psittacula eupatria,bird,2014,Near Threatened,NT,Palaeornis eupatria
+1527,Psittacula eupatria,bird,2013,Near Threatened,NT,Palaeornis eupatria
+1527,Psittacula eupatria,bird,2012,Least Concern,LC,Palaeornis eupatria
+1527,Psittacula eupatria,bird,2009,Least Concern,LC,Palaeornis eupatria
+1527,Psittacula eupatria,bird,2008,Least Concern,LC,Palaeornis eupatria
+1527,Psittacula eupatria,bird,2004,Least Concern,LC,Palaeornis eupatria
+1527,Psittacula eupatria,bird,2000,Lower Risk/least concern,LR/lc,Palaeornis eupatria
+1527,Psittacula eupatria,bird,1994,Lower Risk/least concern,LR/lc,Palaeornis eupatria
+1527,Psittacula eupatria,bird,1988,Lower Risk/least concern,LR/lc,Palaeornis eupatria
+1529,Psittacula krameri,bird,2018,Least Concern,LC,Alexandrinus krameri
+1529,Psittacula krameri,bird,2016,Least Concern,LC,Alexandrinus krameri
+1529,Psittacula krameri,bird,2012,Least Concern,LC,Alexandrinus krameri
+1529,Psittacula krameri,bird,2009,Least Concern,LC,Alexandrinus krameri
+1529,Psittacula krameri,bird,2008,Least Concern,LC,Alexandrinus krameri
+1529,Psittacula krameri,bird,2004,Least Concern,LC,Alexandrinus krameri
+1529,Psittacula krameri,bird,2000,Lower Risk/least concern,LR/lc,Alexandrinus krameri
+1529,Psittacula krameri,bird,1994,Lower Risk/least concern,LR/lc,Alexandrinus krameri
+1529,Psittacula krameri,bird,1988,Lower Risk/least concern,LR/lc,Alexandrinus krameri
+1535,Psittacula cyanocephala,bird,2016,Least Concern,LC,Himalayapsitta cyanocephala
+1535,Psittacula cyanocephala,bird,2012,Least Concern,LC,Himalayapsitta cyanocephala
+1535,Psittacula cyanocephala,bird,2009,Least Concern,LC,Himalayapsitta cyanocephala
+1535,Psittacula cyanocephala,bird,2008,Least Concern,LC,Himalayapsitta cyanocephala
+1535,Psittacula cyanocephala,bird,2004,Least Concern,LC,Himalayapsitta cyanocephala
+1535,Psittacula cyanocephala,bird,2000,Lower Risk/least concern,LR/lc,Himalayapsitta cyanocephala
+1535,Psittacula cyanocephala,bird,1994,Lower Risk/least concern,LR/lc,Himalayapsitta cyanocephala
+1535,Psittacula cyanocephala,bird,1988,Lower Risk/least concern,LR/lc,Himalayapsitta cyanocephala
+1537,Psittacula columboides,bird,2016,Least Concern,LC,Nicopsitta columboides
+1537,Psittacula columboides,bird,2012,Least Concern,LC,Nicopsitta columboides
+1537,Psittacula columboides,bird,2009,Least Concern,LC,Nicopsitta columboides
+1537,Psittacula columboides,bird,2008,Least Concern,LC,Nicopsitta columboides
+1537,Psittacula columboides,bird,2004,Least Concern,LC,Nicopsitta columboides
+1537,Psittacula columboides,bird,2000,Lower Risk/least concern,LR/lc,Nicopsitta columboides
+1537,Psittacula columboides,bird,1994,Lower Risk/least concern,LR/lc,Nicopsitta columboides
+1537,Psittacula columboides,bird,1988,Lower Risk/least concern,LR/lc,Nicopsitta columboides
 1712,Collocalia unicolor,bird,2016,Least Concern,LC,Aerodramus unicolor
 1712,Collocalia unicolor,bird,2012,Least Concern,LC,Aerodramus unicolor
 1712,Collocalia unicolor,bird,2009,Least Concern,LC,Aerodramus unicolor
@@ -853,7 +856,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 1793,Hemiprocne coronata,bird,2000,Lower Risk/least concern,LR/lc,NA
 1793,Hemiprocne coronata,bird,1994,Lower Risk/least concern,LR/lc,NA
 1793,Hemiprocne coronata,bird,1988,Lower Risk/least concern,LR/lc,NA
-2155,Tyto alba,bird,2019,Least Concern,LC,NA
 2155,Tyto alba,bird,2016,Least Concern,LC,NA
 2155,Tyto alba,bird,2012,Least Concern,LC,NA
 2155,Tyto alba,bird,2009,Least Concern,LC,NA
@@ -968,6 +970,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2340,Batrachostomus moniliger,bird,2000,Lower Risk/least concern,LR/lc,NA
 2340,Batrachostomus moniliger,bird,1994,Lower Risk/near threatened,LR/nt,NA
 2340,Batrachostomus moniliger,bird,1988,Near Threatened,NT,NA
+2361,Eurostopodus macrotis,bird,2020,Least Concern,LC,Lyncornis macrotis
 2361,Eurostopodus macrotis,bird,2016,Least Concern,LC,Lyncornis macrotis
 2361,Eurostopodus macrotis,bird,2012,Least Concern,LC,Lyncornis macrotis
 2361,Eurostopodus macrotis,bird,2009,Least Concern,LC,Lyncornis macrotis
@@ -1018,6 +1021,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2444,Columba livia,bird,2000,Lower Risk/least concern,LR/lc,NA
 2444,Columba livia,bird,1994,Lower Risk/least concern,LR/lc,NA
 2444,Columba livia,bird,1988,Lower Risk/least concern,LR/lc,NA
+2451,Columba eversmanni,bird,2017,Vulnerable,VU,NA
 2451,Columba eversmanni,bird,2016,Vulnerable,VU,NA
 2451,Columba eversmanni,bird,2012,Vulnerable,VU,NA
 2451,Columba eversmanni,bird,2008,Vulnerable,VU,NA
@@ -1026,7 +1030,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2451,Columba eversmanni,bird,1996,Vulnerable,VU,NA
 2451,Columba eversmanni,bird,1994,Vulnerable,VU,NA
 2451,Columba eversmanni,bird,1988,Near Threatened,NT,NA
-2464,Columba elphinstonii,bird,2017,Vulnerable,VU,NA
 2464,Columba elphinstonii,bird,2016,Vulnerable,VU,NA
 2464,Columba elphinstonii,bird,2012,Vulnerable,VU,NA
 2464,Columba elphinstonii,bird,2008,Vulnerable,VU,NA
@@ -1055,6 +1058,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2503,Stigmatopelia chinensis,bird,2016,Least Concern,LC,Spilopelia chinensis
 2503,Stigmatopelia chinensis,bird,2014,Least Concern,LC,Spilopelia chinensis
 2507,Streptopelia tranquebarica,bird,2018,Least Concern,LC,NA
+2507,Streptopelia tranquebarica,bird,2017,Least Concern,LC,NA
 2507,Streptopelia tranquebarica,bird,2016,Least Concern,LC,NA
 2507,Streptopelia tranquebarica,bird,2012,Least Concern,LC,NA
 2507,Streptopelia tranquebarica,bird,2009,Least Concern,LC,NA
@@ -1122,6 +1126,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2791,Anthropoides virgo,bird,2000,Lower Risk/least concern,LR/lc,NA
 2791,Anthropoides virgo,bird,1994,Lower Risk/least concern,LR/lc,NA
 2791,Anthropoides virgo,bird,1988,Near Threatened,NT,NA
+2832,Rallina eurizonoides,bird,2020,Least Concern,LC,NA
 2832,Rallina eurizonoides,bird,2016,Least Concern,LC,NA
 2832,Rallina eurizonoides,bird,2012,Least Concern,LC,NA
 2832,Rallina eurizonoides,bird,2009,Least Concern,LC,NA
@@ -1189,6 +1194,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2926,Gallicrex cinerea,bird,2000,Lower Risk/least concern,LR/lc,NA
 2926,Gallicrex cinerea,bird,1994,Lower Risk/least concern,LR/lc,NA
 2926,Gallicrex cinerea,bird,1988,Lower Risk/least concern,LR/lc,NA
+2927,Porphyrio porphyrio,bird,2019,Least Concern,LC,NA
 2927,Porphyrio porphyrio,bird,2016,Least Concern,LC,NA
 2927,Porphyrio porphyrio,bird,2015,Least Concern,LC,NA
 2927,Porphyrio porphyrio,bird,2012,Least Concern,LC,NA
@@ -1198,6 +1204,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2927,Porphyrio porphyrio,bird,2000,Lower Risk/least concern,LR/lc,NA
 2927,Porphyrio porphyrio,bird,1994,Lower Risk/least concern,LR/lc,NA
 2927,Porphyrio porphyrio,bird,1988,Lower Risk/least concern,LR/lc,NA
+2937,Gallinula chloropus,bird,2019,Least Concern,LC,NA
 2937,Gallinula chloropus,bird,2016,Least Concern,LC,NA
 2937,Gallinula chloropus,bird,2015,Least Concern,LC,NA
 2937,Gallinula chloropus,bird,2014,Least Concern,LC,NA
@@ -1211,7 +1218,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2944,Fulica atra,bird,1994,Lower Risk/least concern,LR/lc,NA
 2944,Fulica atra,bird,1988,Lower Risk/least concern,LR/lc,NA
 2961,Pterocles exustus,bird,2018,Least Concern,LC,NA
-2961,Pterocles exustus,bird,2017,Least Concern,LC,NA
 2961,Pterocles exustus,bird,2016,Least Concern,LC,NA
 2961,Pterocles exustus,bird,2012,Least Concern,LC,NA
 2961,Pterocles exustus,bird,2009,Least Concern,LC,NA
@@ -1237,6 +1243,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 2978,Scolopax rusticola,bird,2000,Lower Risk/least concern,LR/lc,NA
 2978,Scolopax rusticola,bird,1994,Lower Risk/least concern,LR/lc,NA
 2978,Scolopax rusticola,bird,1988,Lower Risk/least concern,LR/lc,NA
+2986,Gallinago nemoricola,bird,2017,Vulnerable,VU,NA
 2986,Gallinago nemoricola,bird,2016,Vulnerable,VU,NA
 2986,Gallinago nemoricola,bird,2012,Vulnerable,VU,NA
 2986,Gallinago nemoricola,bird,2008,Vulnerable,VU,NA
@@ -1348,6 +1355,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3025,Tringa glareola,bird,2000,Lower Risk/least concern,LR/lc,NA
 3025,Tringa glareola,bird,1994,Lower Risk/least concern,LR/lc,NA
 3025,Tringa glareola,bird,1988,Lower Risk/least concern,LR/lc,NA
+3026,Xenus cinereus,bird,2019,Least Concern,LC,NA
 3026,Xenus cinereus,bird,2016,Least Concern,LC,NA
 3026,Xenus cinereus,bird,2012,Least Concern,LC,NA
 3026,Xenus cinereus,bird,2009,Least Concern,LC,NA
@@ -1563,6 +1571,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3172,Vanellus gregarius,bird,1996,Vulnerable,VU,NA
 3172,Vanellus gregarius,bird,1994,Vulnerable,VU,NA
 3172,Vanellus gregarius,bird,1988,Threatened,T,NA
+3173,Vanellus leucurus,bird,2020,Least Concern,LC,NA
 3173,Vanellus leucurus,bird,2016,Least Concern,LC,NA
 3173,Vanellus leucurus,bird,2012,Least Concern,LC,NA
 3173,Vanellus leucurus,bird,2009,Least Concern,LC,NA
@@ -1571,7 +1580,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3173,Vanellus leucurus,bird,2000,Lower Risk/least concern,LR/lc,NA
 3173,Vanellus leucurus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3173,Vanellus leucurus,bird,1988,Lower Risk/least concern,LR/lc,NA
-3177,Dromas ardeola,bird,2019,Least Concern,LC,NA
 3177,Dromas ardeola,bird,2016,Least Concern,LC,NA
 3177,Dromas ardeola,bird,2012,Least Concern,LC,NA
 3177,Dromas ardeola,bird,2009,Least Concern,LC,NA
@@ -1606,6 +1614,8 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3193,Glareola lactea,bird,2000,Lower Risk/least concern,LR/lc,NA
 3193,Glareola lactea,bird,1994,Lower Risk/least concern,LR/lc,NA
 3193,Glareola lactea,bird,1988,Lower Risk/least concern,LR/lc,NA
+3206,Rynchops albicollis,bird,2020,Endangered,EN,NA
+3206,Rynchops albicollis,bird,2017,Vulnerable,VU,NA
 3206,Rynchops albicollis,bird,2016,Vulnerable,VU,NA
 3206,Rynchops albicollis,bird,2013,Vulnerable,VU,NA
 3206,Rynchops albicollis,bird,2012,Vulnerable,VU,NA
@@ -1636,6 +1646,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3233,Larus brunnicephalus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3233,Larus brunnicephalus,bird,1988,Lower Risk/least concern,LR/lc,NA
 3240,Larus ridibundus,bird,2018,Least Concern,LC,NA
+3240,Larus ridibundus,bird,2017,Least Concern,LC,NA
 3240,Larus ridibundus,bird,2016,Least Concern,LC,NA
 3240,Larus ridibundus,bird,2012,Least Concern,LC,NA
 3240,Larus ridibundus,bird,2009,Least Concern,LC,NA
@@ -1646,7 +1657,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3240,Larus ridibundus,bird,1988,Lower Risk/least concern,LR/lc,NA
 3241,Larus genei,bird,2019,Least Concern,LC,NA
 3241,Larus genei,bird,2018,Least Concern,LC,NA
-3241,Larus genei,bird,2017,Least Concern,LC,NA
 3241,Larus genei,bird,2016,Least Concern,LC,NA
 3241,Larus genei,bird,2012,Least Concern,LC,NA
 3241,Larus genei,bird,2009,Least Concern,LC,NA
@@ -1656,7 +1666,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3241,Larus genei,bird,1994,Lower Risk/least concern,LR/lc,NA
 3241,Larus genei,bird,1988,Lower Risk/least concern,LR/lc,NA
 3257,Sterna nilotica,bird,NA,NA,NA,none available
-3258,Sterna caspia,bird,2019,Least Concern,LC,Hydroprogne caspia
 3258,Sterna caspia,bird,2018,Least Concern,LC,Hydroprogne caspia
 3258,Sterna caspia,bird,2016,Least Concern,LC,Hydroprogne caspia
 3258,Sterna caspia,bird,2015,Least Concern,LC,Hydroprogne caspia
@@ -1667,6 +1676,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3258,Sterna caspia,bird,2000,Lower Risk/least concern,LR/lc,Hydroprogne caspia
 3258,Sterna caspia,bird,1994,Lower Risk/least concern,LR/lc,Hydroprogne caspia
 3258,Sterna caspia,bird,1988,Lower Risk/least concern,LR/lc,Hydroprogne caspia
+3259,Sterna aurantia,bird,2020,Vulnerable,VU,NA
 3259,Sterna aurantia,bird,2016,Near Threatened,NT,NA
 3259,Sterna aurantia,bird,2012,Near Threatened,NT,NA
 3259,Sterna aurantia,bird,2009,Least Concern,LC,NA
@@ -1694,6 +1704,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3266,Sterna dougallii,bird,2000,Lower Risk/least concern,LR/lc,NA
 3266,Sterna dougallii,bird,1994,Lower Risk/least concern,LR/lc,NA
 3266,Sterna dougallii,bird,1988,Near Threatened,NT,NA
+3270,Sterna hirundo,bird,2019,Least Concern,LC,NA
 3270,Sterna hirundo,bird,2018,Least Concern,LC,NA
 3270,Sterna hirundo,bird,2016,Least Concern,LC,NA
 3270,Sterna hirundo,bird,2012,Least Concern,LC,NA
@@ -1733,6 +1744,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3283,Sterna repressa,bird,2000,Lower Risk/least concern,LR/lc,NA
 3283,Sterna repressa,bird,1994,Lower Risk/least concern,LR/lc,NA
 3283,Sterna repressa,bird,1988,Lower Risk/least concern,LR/lc,NA
+3284,Sterna acuticauda,bird,2017,Endangered,EN,NA
 3284,Sterna acuticauda,bird,2016,Endangered,EN,NA
 3284,Sterna acuticauda,bird,2012,Endangered,EN,NA
 3284,Sterna acuticauda,bird,2008,Near Threatened,NT,NA
@@ -1752,6 +1764,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3287,Sterna anaethetus,bird,2000,Lower Risk/least concern,LR/lc,Onychoprion anaethetus
 3287,Sterna anaethetus,bird,1994,Lower Risk/least concern,LR/lc,Onychoprion anaethetus
 3287,Sterna anaethetus,bird,1988,Lower Risk/least concern,LR/lc,Onychoprion anaethetus
+3288,Sterna fuscata,bird,2020,Least Concern,LC,Onychoprion fuscatus
 3288,Sterna fuscata,bird,2018,Least Concern,LC,Onychoprion fuscatus
 3288,Sterna fuscata,bird,2017,Least Concern,LC,Onychoprion fuscatus
 3288,Sterna fuscata,bird,2016,Least Concern,LC,Onychoprion fuscatus
@@ -1780,6 +1793,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3324,Pandion haliaetus,bird,2000,Lower Risk/least concern,LR/lc,NA
 3324,Pandion haliaetus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3324,Pandion haliaetus,bird,1988,Lower Risk/least concern,LR/lc,NA
+3327,Aviceda jerdoni,bird,2020,Least Concern,LC,NA
 3327,Aviceda jerdoni,bird,2016,Least Concern,LC,NA
 3327,Aviceda jerdoni,bird,2015,Least Concern,LC,NA
 3327,Aviceda jerdoni,bird,2012,Least Concern,LC,NA
@@ -1826,6 +1840,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3358,Haliastur indus,bird,2000,Lower Risk/least concern,LR/lc,NA
 3358,Haliastur indus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3358,Haliastur indus,bird,1988,Lower Risk/least concern,LR/lc,NA
+3359,Haliaeetus leucogaster,bird,2020,Least Concern,LC,NA
 3359,Haliaeetus leucogaster,bird,2016,Least Concern,LC,NA
 3359,Haliaeetus leucogaster,bird,2012,Least Concern,LC,NA
 3359,Haliaeetus leucogaster,bird,2009,Least Concern,LC,NA
@@ -1843,7 +1858,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3367,Ichthyophaga humilis,bird,1988,Lower Risk/least concern,LR/lc,Icthyophaga humilis
 3368,Ichthyophaga ichthyaetus,bird,NA,NA,NA,none available
 3371,Neophron percnopterus,bird,2019,Endangered,EN,NA
-3371,Neophron percnopterus,bird,2017,Endangered,EN,NA
 3371,Neophron percnopterus,bird,2016,Endangered,EN,NA
 3371,Neophron percnopterus,bird,2014,Endangered,EN,NA
 3371,Neophron percnopterus,bird,2012,Endangered,EN,NA
@@ -1866,6 +1880,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3374,Gyps bengalensis,bird,2000,Critically Endangered,CR,NA
 3374,Gyps bengalensis,bird,1994,Lower Risk/near threatened,LR/nt,NA
 3374,Gyps bengalensis,bird,1988,Lower Risk/least concern,LR/lc,NA
+3383,Sarcogyps calvus,bird,2017,Critically Endangered,CR,NA
 3383,Sarcogyps calvus,bird,2016,Critically Endangered,CR,NA
 3383,Sarcogyps calvus,bird,2015,Critically Endangered,CR,NA
 3383,Sarcogyps calvus,bird,2013,Critically Endangered,CR,NA
@@ -1934,7 +1949,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3420,Accipiter trivirgatus,bird,2000,Lower Risk/least concern,LR/lc,NA
 3420,Accipiter trivirgatus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3420,Accipiter trivirgatus,bird,1988,Lower Risk/least concern,LR/lc,NA
-3425,Accipiter badius,bird,2019,Least Concern,LC,NA
 3425,Accipiter badius,bird,2016,Least Concern,LC,NA
 3425,Accipiter badius,bird,2015,Least Concern,LC,NA
 3425,Accipiter badius,bird,2012,Least Concern,LC,NA
@@ -1980,7 +1994,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3529,Ictinaetus malayensis,bird,1994,Lower Risk/least concern,LR/lc,Ictinaetus malaiensis
 3529,Ictinaetus malayensis,bird,1988,Lower Risk/least concern,LR/lc,Ictinaetus malaiensis
 3532,Aquila rapax,bird,2018,Vulnerable,VU,NA
-3532,Aquila rapax,bird,2017,Least Concern,LC,NA
 3532,Aquila rapax,bird,2016,Least Concern,LC,NA
 3532,Aquila rapax,bird,2015,Least Concern,LC,NA
 3532,Aquila rapax,bird,2013,Least Concern,LC,NA
@@ -1991,6 +2004,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3532,Aquila rapax,bird,2000,Lower Risk/least concern,LR/lc,NA
 3532,Aquila rapax,bird,1994,Lower Risk/least concern,LR/lc,NA
 3532,Aquila rapax,bird,1988,Lower Risk/least concern,LR/lc,NA
+3533,Aquila nipalensis,bird,2020,Endangered,EN,NA
 3533,Aquila nipalensis,bird,2017,Endangered,EN,NA
 3533,Aquila nipalensis,bird,2016,Endangered,EN,NA
 3533,Aquila nipalensis,bird,2015,Endangered,EN,NA
@@ -2003,6 +2017,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3533,Aquila nipalensis,bird,2000,Lower Risk/least concern,LR/lc,NA
 3533,Aquila nipalensis,bird,1994,Lower Risk/least concern,LR/lc,NA
 3533,Aquila nipalensis,bird,1988,Lower Risk/least concern,LR/lc,NA
+3541,Aquila fasciatus,bird,2019,Least Concern,LC,Aquila fasciata
 3541,Aquila fasciatus,bird,2016,Least Concern,LC,Aquila fasciata
 3541,Aquila fasciatus,bird,2013,Least Concern,LC,Aquila fasciata
 3541,Aquila fasciatus,bird,2012,Least Concern,LC,Aquila fasciata
@@ -2022,6 +2037,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3543,Hieraaetus pennatus,bird,2000,Lower Risk/least concern,LR/lc,NA
 3543,Hieraaetus pennatus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3543,Hieraaetus pennatus,bird,1988,Lower Risk/least concern,LR/lc,NA
+3546,Lophotriorchis kienerii,bird,2020,Near Threatened,NT,NA
 3546,Lophotriorchis kienerii,bird,2018,Near Threatened,NT,NA
 3546,Lophotriorchis kienerii,bird,2016,Least Concern,LC,NA
 3546,Lophotriorchis kienerii,bird,2012,Least Concern,LC,NA
@@ -2092,6 +2108,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3612,Falco severus,bird,2000,Lower Risk/least concern,LR/lc,NA
 3612,Falco severus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3612,Falco severus,bird,1988,Lower Risk/least concern,LR/lc,NA
+3618,Falco jugger,bird,2020,Near Threatened,NT,NA
 3618,Falco jugger,bird,2016,Near Threatened,NT,NA
 3618,Falco jugger,bird,2012,Near Threatened,NT,NA
 3618,Falco jugger,bird,2008,Near Threatened,NT,NA
@@ -2103,7 +2120,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3622,Falco peregrinus,bird,2016,Least Concern,LC,NA
 3622,Falco peregrinus,bird,2015,Least Concern,LC,NA
 3622,Falco peregrinus,bird,2014,Least Concern,LC,NA
-3628,Tachybaptus ruficollis,bird,2019,Least Concern,LC,NA
 3628,Tachybaptus ruficollis,bird,2017,Least Concern,LC,NA
 3628,Tachybaptus ruficollis,bird,2016,Least Concern,LC,NA
 3628,Tachybaptus ruficollis,bird,2012,Least Concern,LC,NA
@@ -2148,7 +2164,9 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3676,Phalacrocorax fuscicollis,bird,2000,Lower Risk/least concern,LR/lc,NA
 3676,Phalacrocorax fuscicollis,bird,1994,Lower Risk/least concern,LR/lc,NA
 3676,Phalacrocorax fuscicollis,bird,1988,Lower Risk/least concern,LR/lc,NA
+3679,Phalacrocorax carbo,bird,2019,Least Concern,LC,NA
 3679,Phalacrocorax carbo,bird,2018,Least Concern,LC,NA
+3679,Phalacrocorax carbo,bird,2017,Least Concern,LC,NA
 3679,Phalacrocorax carbo,bird,2016,Least Concern,LC,NA
 3679,Phalacrocorax carbo,bird,2012,Least Concern,LC,NA
 3679,Phalacrocorax carbo,bird,2009,Least Concern,LC,NA
@@ -2184,7 +2202,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3728,Casmerodius albus,bird,1994,Lower Risk/least concern,LR/lc,Ardea alba
 3728,Casmerodius albus,bird,1988,Lower Risk/least concern,LR/lc,Ardea alba
 3729,Mesophoyx intermedia,bird,NA,NA,NA,none available
-3730,Bubulcus ibis,bird,2019,Least Concern,LC,NA
 3730,Bubulcus ibis,bird,2016,Least Concern,LC,NA
 3730,Bubulcus ibis,bird,2014,Least Concern,LC,NA
 3730,Bubulcus ibis,bird,2012,Least Concern,LC,NA
@@ -2204,6 +2221,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3732,Ardeola grayii,bird,1988,Lower Risk/least concern,LR/lc,NA
 3737,Butorides striata,bird,2016,Least Concern,LC,NA
 3737,Butorides striata,bird,2014,Least Concern,LC,NA
+3742,Nycticorax nycticorax,bird,2019,Least Concern,LC,NA
 3742,Nycticorax nycticorax,bird,2016,Least Concern,LC,NA
 3742,Nycticorax nycticorax,bird,2012,Least Concern,LC,NA
 3742,Nycticorax nycticorax,bird,2009,Least Concern,LC,NA
@@ -2253,7 +2271,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3766,Botaurus stellaris,bird,1994,Lower Risk/least concern,LR/lc,NA
 3766,Botaurus stellaris,bird,1988,Lower Risk/least concern,LR/lc,NA
 3769,Phoenicopterus roseus,bird,2018,Least Concern,LC,NA
-3769,Phoenicopterus roseus,bird,2017,Least Concern,LC,NA
 3769,Phoenicopterus roseus,bird,2016,Least Concern,LC,NA
 3769,Phoenicopterus roseus,bird,2015,Least Concern,LC,NA
 3769,Phoenicopterus roseus,bird,2012,Least Concern,LC,NA
@@ -2298,7 +2315,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3798,Pseudibis papillosa,bird,2000,Lower Risk/least concern,LR/lc,NA
 3798,Pseudibis papillosa,bird,1994,Lower Risk/near threatened,LR/nt,NA
 3798,Pseudibis papillosa,bird,1988,Lower Risk/least concern,LR/lc,NA
-3802,Platalea leucorodia,bird,2019,Least Concern,LC,NA
 3802,Platalea leucorodia,bird,2016,Least Concern,LC,NA
 3802,Platalea leucorodia,bird,2015,Least Concern,LC,NA
 3802,Platalea leucorodia,bird,2012,Least Concern,LC,NA
@@ -2335,7 +2351,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3828,Anastomus oscitans,bird,2000,Lower Risk/least concern,LR/lc,NA
 3828,Anastomus oscitans,bird,1994,Lower Risk/near threatened,LR/nt,NA
 3828,Anastomus oscitans,bird,1988,Lower Risk/least concern,LR/lc,NA
-3830,Ciconia nigra,bird,2017,Least Concern,LC,NA
 3830,Ciconia nigra,bird,2016,Least Concern,LC,NA
 3830,Ciconia nigra,bird,2012,Least Concern,LC,NA
 3830,Ciconia nigra,bird,2009,Least Concern,LC,NA
@@ -2344,6 +2359,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3830,Ciconia nigra,bird,2000,Lower Risk/least concern,LR/lc,NA
 3830,Ciconia nigra,bird,1994,Lower Risk/least concern,LR/lc,NA
 3830,Ciconia nigra,bird,1988,Lower Risk/least concern,LR/lc,NA
+3832,Ciconia episcopus,bird,2020,Near Threatened,NT,NA
 3832,Ciconia episcopus,bird,2017,Vulnerable,VU,NA
 3832,Ciconia episcopus,bird,2016,Vulnerable,VU,NA
 3832,Ciconia episcopus,bird,2014,Vulnerable,VU,NA
@@ -2364,6 +2380,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3837,Ephippiorhynchus asiaticus,bird,2000,Lower Risk/near threatened,LR/nt,NA
 3837,Ephippiorhynchus asiaticus,bird,1994,Lower Risk/least concern,LR/lc,NA
 3837,Ephippiorhynchus asiaticus,bird,1988,Lower Risk/least concern,LR/lc,NA
+3840,Leptoptilos javanicus,bird,2017,Vulnerable,VU,NA
 3840,Leptoptilos javanicus,bird,2016,Vulnerable,VU,NA
 3840,Leptoptilos javanicus,bird,2013,Vulnerable,VU,NA
 3840,Leptoptilos javanicus,bird,2012,Vulnerable,VU,NA
@@ -2375,7 +2392,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 3840,Leptoptilos javanicus,bird,1994,Vulnerable,VU,NA
 3840,Leptoptilos javanicus,bird,1988,Threatened,T,NA
 3928,Puffinus pacificus,bird,2018,Least Concern,LC,Ardenna pacifica
-3928,Puffinus pacificus,bird,2017,Least Concern,LC,Ardenna pacifica
 3928,Puffinus pacificus,bird,2016,Least Concern,LC,Ardenna pacifica
 3928,Puffinus pacificus,bird,2012,Least Concern,LC,Ardenna pacifica
 3928,Puffinus pacificus,bird,2009,Least Concern,LC,Ardenna pacifica
@@ -2440,6 +2456,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 5528,Lanius cristatus,bird,2000,Lower Risk/least concern,LR/lc,NA
 5528,Lanius cristatus,bird,1994,Lower Risk/least concern,LR/lc,NA
 5528,Lanius cristatus,bird,1988,Lower Risk/least concern,LR/lc,NA
+5532,Lanius vittatus,bird,2017,Least Concern,LC,NA
 5532,Lanius vittatus,bird,2016,Least Concern,LC,NA
 5532,Lanius vittatus,bird,2012,Least Concern,LC,NA
 5532,Lanius vittatus,bird,2009,Least Concern,LC,NA
@@ -2465,6 +2482,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 5736,Dendrocitta vagabunda,bird,2000,Lower Risk/least concern,LR/lc,NA
 5736,Dendrocitta vagabunda,bird,1994,Lower Risk/least concern,LR/lc,NA
 5736,Dendrocitta vagabunda,bird,1988,Lower Risk/least concern,LR/lc,NA
+5739,Dendrocitta leucogastra,bird,2020,Least Concern,LC,NA
 5739,Dendrocitta leucogastra,bird,2016,Least Concern,LC,NA
 5739,Dendrocitta leucogastra,bird,2012,Least Concern,LC,NA
 5739,Dendrocitta leucogastra,bird,2009,Least Concern,LC,NA
@@ -2474,6 +2492,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 5739,Dendrocitta leucogastra,bird,1994,Lower Risk/near threatened,LR/nt,NA
 5739,Dendrocitta leucogastra,bird,1988,Near Threatened,NT,NA
 5760,Corvus splendens,bird,2018,Least Concern,LC,NA
+5760,Corvus splendens,bird,2017,Least Concern,LC,NA
 5760,Corvus splendens,bird,2016,Least Concern,LC,NA
 5760,Corvus splendens,bird,2012,Least Concern,LC,NA
 5760,Corvus splendens,bird,2009,Least Concern,LC,NA
@@ -2491,9 +2510,9 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 5857,Artamus fuscus,bird,2000,Lower Risk/least concern,LR/lc,NA
 5857,Artamus fuscus,bird,1994,Lower Risk/least concern,LR/lc,NA
 5857,Artamus fuscus,bird,1988,Lower Risk/least concern,LR/lc,NA
-5882,Oriolus oriolus,bird,2017,Least Concern,LC,NA
 5882,Oriolus oriolus,bird,2016,Least Concern,LC,NA
 5884,Oriolus chinensis,bird,2018,Least Concern,LC,NA
+5884,Oriolus chinensis,bird,2017,Least Concern,LC,NA
 5884,Oriolus chinensis,bird,2016,Least Concern,LC,NA
 5884,Oriolus chinensis,bird,2013,Least Concern,LC,NA
 5884,Oriolus chinensis,bird,2012,Least Concern,LC,NA
@@ -2512,15 +2531,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 5893,Oriolus xanthornus,bird,2000,Lower Risk/least concern,LR/lc,NA
 5893,Oriolus xanthornus,bird,1994,Lower Risk/least concern,LR/lc,NA
 5893,Oriolus xanthornus,bird,1988,Lower Risk/least concern,LR/lc,NA
-5903,Coracina macei,bird,2018,Least Concern,LC,NA
-5903,Coracina macei,bird,2016,Least Concern,LC,NA
-5903,Coracina macei,bird,2012,Least Concern,LC,NA
-5903,Coracina macei,bird,2009,Least Concern,LC,NA
-5903,Coracina macei,bird,2008,Least Concern,LC,NA
-5903,Coracina macei,bird,2004,Least Concern,LC,NA
-5903,Coracina macei,bird,2000,Lower Risk/least concern,LR/lc,NA
-5903,Coracina macei,bird,1994,Lower Risk/least concern,LR/lc,NA
-5903,Coracina macei,bird,1988,Lower Risk/least concern,LR/lc,NA
+5903,Coracina macei,bird,2020,Least Concern,LC,NA
 5948,Coracina melanoptera,bird,2016,Least Concern,LC,Lalage melanoptera
 5948,Coracina melanoptera,bird,2012,Least Concern,LC,Lalage melanoptera
 5948,Coracina melanoptera,bird,2009,Least Concern,LC,Lalage melanoptera
@@ -2610,7 +2621,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6038,Dicrurus aeneus,bird,1988,Lower Risk/least concern,LR/lc,NA
 6048,Dicrurus paradiseus,bird,2016,Least Concern,LC,NA
 6061,Hypothymis azurea,bird,2016,Least Concern,LC,NA
-6071,Terpsiphone paradisi,bird,2019,Least Concern,LC,NA
+6071,Terpsiphone paradisi,bird,2017,Least Concern,LC,NA
 6071,Terpsiphone paradisi,bird,2016,Least Concern,LC,NA
 6147,Aegithina tiphia,bird,2016,Least Concern,LC,NA
 6147,Aegithina tiphia,bird,2012,Least Concern,LC,NA
@@ -2676,7 +2687,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6490,Muscicapa dauurica,bird,2000,Lower Risk/least concern,LR/lc,NA
 6490,Muscicapa dauurica,bird,1994,Lower Risk/least concern,LR/lc,NA
 6490,Muscicapa dauurica,bird,1988,Lower Risk/least concern,LR/lc,NA
-6493,Muscicapa ruficauda,bird,2019,Least Concern,LC,Ficedula ruficauda
 6493,Muscicapa ruficauda,bird,2016,Least Concern,LC,Ficedula ruficauda
 6493,Muscicapa ruficauda,bird,2012,Least Concern,LC,Ficedula ruficauda
 6493,Muscicapa ruficauda,bird,2009,Least Concern,LC,Ficedula ruficauda
@@ -2701,6 +2711,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6521,Ficedula subrubra,bird,1996,Vulnerable,VU,NA
 6521,Ficedula subrubra,bird,1994,Vulnerable,VU,NA
 6521,Ficedula subrubra,bird,1988,Near Threatened,NT,NA
+6536,Ficedula superciliaris,bird,2020,Least Concern,LC,NA
 6536,Ficedula superciliaris,bird,2016,Least Concern,LC,NA
 6536,Ficedula superciliaris,bird,2012,Least Concern,LC,NA
 6536,Ficedula superciliaris,bird,2009,Least Concern,LC,NA
@@ -2736,7 +2747,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6545,Eumyias albicaudatus,bird,1988,Near Threatened,NT,NA
 6560,Cyornis pallipes,bird,NA,NA,NA,none available
 6563,Cyornis rubeculoides,bird,2016,Least Concern,LC,NA
-6569,Cyornis tickelliae,bird,2017,Least Concern,LC,NA
 6569,Cyornis tickelliae,bird,2016,Least Concern,LC,NA
 6573,Culicicapa ceylonensis,bird,2016,Least Concern,LC,NA
 6573,Culicicapa ceylonensis,bird,2012,Least Concern,LC,NA
@@ -2776,6 +2786,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6647,Saxicoloides fulicatus,bird,2000,Lower Risk/least concern,LR/lc,NA
 6647,Saxicoloides fulicatus,bird,1994,Lower Risk/least concern,LR/lc,NA
 6647,Saxicoloides fulicatus,bird,1988,Lower Risk/least concern,LR/lc,NA
+6651,Phoenicurus ochruros,bird,2019,Least Concern,LC,NA
 6651,Phoenicurus ochruros,bird,2018,Least Concern,LC,NA
 6651,Phoenicurus ochruros,bird,2016,Least Concern,LC,NA
 6651,Phoenicurus ochruros,bird,2014,Least Concern,LC,NA
@@ -2786,6 +2797,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6651,Phoenicurus ochruros,bird,2000,Lower Risk/least concern,LR/lc,NA
 6651,Phoenicurus ochruros,bird,1994,Lower Risk/least concern,LR/lc,NA
 6651,Phoenicurus ochruros,bird,1988,Lower Risk/least concern,LR/lc,NA
+6682,Saxicola torquatus,bird,2020,Least Concern,LC,NA
 6682,Saxicola torquatus,bird,2016,Least Concern,LC,NA
 6682,Saxicola torquatus,bird,2015,Least Concern,LC,NA
 6682,Saxicola torquatus,bird,2012,Least Concern,LC,NA
@@ -2846,7 +2858,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6814,Sturnus roseus,bird,1994,Lower Risk/least concern,LR/lc,Pastor roseus
 6814,Sturnus roseus,bird,1988,Lower Risk/least concern,LR/lc,Pastor roseus
 6818,Sturnus contra,bird,NA,NA,NA,none available
-6823,Acridotheres tristis,bird,2017,Least Concern,LC,NA
 6823,Acridotheres tristis,bird,2016,Least Concern,LC,NA
 6823,Acridotheres tristis,bird,2012,Least Concern,LC,NA
 6823,Acridotheres tristis,bird,2009,Least Concern,LC,NA
@@ -2872,7 +2883,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6825,Acridotheres fuscus,bird,2000,Lower Risk/least concern,LR/lc,NA
 6825,Acridotheres fuscus,bird,1994,Lower Risk/least concern,LR/lc,NA
 6825,Acridotheres fuscus,bird,1988,Lower Risk/least concern,LR/lc,NA
-6841,Gracula religiosa,bird,2018,Least Concern,LC,NA
+6841,Gracula religiosa,bird,2017,Least Concern,LC,NA
 6841,Gracula religiosa,bird,2016,Least Concern,LC,NA
 6883,Sitta castanea,bird,2018,Least Concern,LC,NA
 6883,Sitta castanea,bird,2016,Least Concern,LC,NA
@@ -2892,6 +2903,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7053,Parus nuchalis,bird,1996,Vulnerable,VU,Machlolophus nuchalis
 7053,Parus nuchalis,bird,1994,Vulnerable,VU,Machlolophus nuchalis
 7053,Parus nuchalis,bird,1988,Threatened,T,Machlolophus nuchalis
+7054,Parus xanthogenys,bird,2017,Least Concern,LC,Machlolophus xanthogenys
 7054,Parus xanthogenys,bird,2016,Least Concern,LC,Machlolophus xanthogenys
 7054,Parus xanthogenys,bird,2012,Least Concern,LC,Machlolophus xanthogenys
 7054,Parus xanthogenys,bird,2009,Least Concern,LC,Machlolophus xanthogenys
@@ -3065,7 +3077,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7379,Prinia inornata,bird,1994,Lower Risk/least concern,LR/lc,NA
 7379,Prinia inornata,bird,1988,Lower Risk/least concern,LR/lc,NA
 7455,Zosterops palpebrosus,bird,2019,Least Concern,LC,NA
-7589,Locustella naevia,bird,2017,Least Concern,LC,NA
 7589,Locustella naevia,bird,2016,Least Concern,LC,NA
 7589,Locustella naevia,bird,2014,Least Concern,LC,NA
 7589,Locustella naevia,bird,2012,Least Concern,LC,NA
@@ -3075,6 +3086,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7589,Locustella naevia,bird,2000,Lower Risk/least concern,LR/lc,NA
 7589,Locustella naevia,bird,1994,Lower Risk/least concern,LR/lc,NA
 7589,Locustella naevia,bird,1988,Lower Risk/least concern,LR/lc,NA
+7601,Acrocephalus agricola,bird,2017,Least Concern,LC,NA
 7601,Acrocephalus agricola,bird,2016,Least Concern,LC,NA
 7601,Acrocephalus agricola,bird,2012,Least Concern,LC,NA
 7601,Acrocephalus agricola,bird,2009,Least Concern,LC,NA
@@ -3083,7 +3095,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7601,Acrocephalus agricola,bird,2000,Lower Risk/least concern,LR/lc,NA
 7601,Acrocephalus agricola,bird,1994,Not Recognized,NR,NA
 7601,Acrocephalus agricola,bird,1988,Not Recognized,NR,NA
-7605,Acrocephalus dumetorum,bird,2017,Least Concern,LC,NA
 7605,Acrocephalus dumetorum,bird,2016,Least Concern,LC,NA
 7605,Acrocephalus dumetorum,bird,2012,Least Concern,LC,NA
 7605,Acrocephalus dumetorum,bird,2009,Least Concern,LC,NA
@@ -3092,7 +3103,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7605,Acrocephalus dumetorum,bird,2000,Lower Risk/least concern,LR/lc,NA
 7605,Acrocephalus dumetorum,bird,1994,Lower Risk/least concern,LR/lc,NA
 7605,Acrocephalus dumetorum,bird,1988,Lower Risk/least concern,LR/lc,NA
-7608,Acrocephalus stentoreus,bird,2019,Least Concern,LC,NA
+7608,Acrocephalus stentoreus,bird,2017,Least Concern,LC,NA
 7608,Acrocephalus stentoreus,bird,2016,Least Concern,LC,NA
 7608,Acrocephalus stentoreus,bird,2013,Least Concern,LC,NA
 7608,Acrocephalus stentoreus,bird,2012,Least Concern,LC,NA
@@ -3119,6 +3130,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7630,Hippolais caligata,bird,2000,Lower Risk/least concern,LR/lc,Iduna caligata
 7630,Hippolais caligata,bird,1994,Lower Risk/least concern,LR/lc,Iduna caligata
 7630,Hippolais caligata,bird,1988,Lower Risk/least concern,LR/lc,Iduna caligata
+7631,Hippolais rama,bird,2017,Least Concern,LC,Iduna rama
 7631,Hippolais rama,bird,2016,Least Concern,LC,Iduna rama
 7631,Hippolais rama,bird,2012,Least Concern,LC,Iduna rama
 7631,Hippolais rama,bird,2009,Least Concern,LC,Iduna rama
@@ -3184,7 +3196,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7726,Phylloscopus occipitalis,bird,2000,Lower Risk/least concern,LR/lc,NA
 7726,Phylloscopus occipitalis,bird,1994,Lower Risk/least concern,LR/lc,NA
 7726,Phylloscopus occipitalis,bird,1988,Lower Risk/least concern,LR/lc,NA
-7773,Chaetornis striata,bird,2017,Vulnerable,VU,NA
 7773,Chaetornis striata,bird,2016,Vulnerable,VU,NA
 7773,Chaetornis striata,bird,2012,Vulnerable,VU,NA
 7773,Chaetornis striata,bird,2008,Vulnerable,VU,NA
@@ -3217,7 +3228,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7847,Pellorneum ruficeps,bird,2000,Lower Risk/least concern,LR/lc,NA
 7847,Pellorneum ruficeps,bird,1994,Lower Risk/least concern,LR/lc,NA
 7847,Pellorneum ruficeps,bird,1988,Lower Risk/least concern,LR/lc,NA
-7934,Dumetia hyperythra,bird,2017,Least Concern,LC,NA
 7934,Dumetia hyperythra,bird,2016,Least Concern,LC,NA
 7934,Dumetia hyperythra,bird,2012,Least Concern,LC,NA
 7934,Dumetia hyperythra,bird,2009,Least Concern,LC,NA
@@ -3286,7 +3296,12 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8009,Alcippe poioicephala,bird,1988,Lower Risk/least concern,LR/lc,NA
 8078,Sylvia althaea,bird,2019,Least Concern,LC,Sylvia curruca
 8078,Sylvia althaea,bird,2016,Least Concern,LC,Sylvia curruca
-8081,Sylvia hortensis,bird,2019,Least Concern,LC,NA
+8078,Sylvia althaea,bird,2012,Not Recognized,NR,Sylvia curruca
+8078,Sylvia althaea,bird,2008,Not Recognized,NR,Sylvia curruca
+8078,Sylvia althaea,bird,2004,Not Recognized,NR,Sylvia curruca
+8078,Sylvia althaea,bird,2000,Not Recognized,NR,Sylvia curruca
+8078,Sylvia althaea,bird,1994,Not Recognized,NR,Sylvia curruca
+8078,Sylvia althaea,bird,1988,Not Recognized,NR,Sylvia curruca
 8081,Sylvia hortensis,bird,2018,Least Concern,LC,NA
 8081,Sylvia hortensis,bird,2016,Least Concern,LC,NA
 8081,Sylvia hortensis,bird,2008,Not Recognized,NR,NA
@@ -3312,6 +3327,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8137,Eremopterix griseus,bird,2000,Lower Risk/least concern,LR/lc,NA
 8137,Eremopterix griseus,bird,1994,Lower Risk/least concern,LR/lc,NA
 8137,Eremopterix griseus,bird,1988,Lower Risk/least concern,LR/lc,NA
+8139,Ammomanes phoenicura,bird,2017,Least Concern,LC,NA
 8139,Ammomanes phoenicura,bird,2016,Least Concern,LC,NA
 8139,Ammomanes phoenicura,bird,2012,Least Concern,LC,NA
 8139,Ammomanes phoenicura,bird,2009,Least Concern,LC,NA
@@ -3403,7 +3419,9 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8341,Aethopyga siparaja,bird,2016,Least Concern,LC,NA
 8344,Arachnothera longirostra,bird,2016,Least Concern,LC,NA
 8367,Passer domesticus,bird,2018,Least Concern,LC,NA
+8367,Passer domesticus,bird,2017,Least Concern,LC,NA
 8367,Passer domesticus,bird,2016,Least Concern,LC,NA
+8390,Petronia xanthocollis,bird,2019,Least Concern,LC,Gymnoris xanthocollis
 8390,Petronia xanthocollis,bird,2016,Least Concern,LC,Gymnoris xanthocollis
 8390,Petronia xanthocollis,bird,2012,Least Concern,LC,Gymnoris xanthocollis
 8390,Petronia xanthocollis,bird,2009,Least Concern,LC,Gymnoris xanthocollis
@@ -3443,10 +3461,10 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8410,Motacilla citreola,bird,2000,Lower Risk/least concern,LR/lc,NA
 8410,Motacilla citreola,bird,1994,Lower Risk/least concern,LR/lc,NA
 8410,Motacilla citreola,bird,1988,Lower Risk/least concern,LR/lc,NA
-8411,Motacilla flava,bird,2019,Least Concern,LC,NA
 8411,Motacilla flava,bird,2018,Least Concern,LC,NA
 8411,Motacilla flava,bird,2017,Least Concern,LC,NA
 8411,Motacilla flava,bird,2016,Least Concern,LC,NA
+8412,Motacilla cinerea,bird,2017,Least Concern,LC,NA
 8412,Motacilla cinerea,bird,2016,Least Concern,LC,NA
 8412,Motacilla cinerea,bird,2015,Least Concern,LC,NA
 8412,Motacilla cinerea,bird,2012,Least Concern,LC,NA
@@ -3456,6 +3474,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8412,Motacilla cinerea,bird,2000,Lower Risk/least concern,LR/lc,NA
 8412,Motacilla cinerea,bird,1994,Lower Risk/least concern,LR/lc,NA
 8412,Motacilla cinerea,bird,1988,Lower Risk/least concern,LR/lc,NA
+8429,Anthus richardi,bird,2019,Least Concern,LC,NA
 8429,Anthus richardi,bird,2016,Least Concern,LC,NA
 8430,Anthus rufulus,bird,2016,Least Concern,LC,NA
 8430,Anthus rufulus,bird,2012,Least Concern,LC,NA
@@ -3474,6 +3493,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8437,Anthus godlewskii,bird,1994,Lower Risk/least concern,LR/lc,NA
 8437,Anthus godlewskii,bird,1988,Lower Risk/least concern,LR/lc,NA
 8441,Anthus similis,bird,2019,Least Concern,LC,NA
+8441,Anthus similis,bird,2017,Least Concern,LC,NA
 8441,Anthus similis,bird,2016,Least Concern,LC,NA
 8446,Anthus trivialis,bird,2018,Least Concern,LC,NA
 8446,Anthus trivialis,bird,2016,Least Concern,LC,NA
@@ -3526,6 +3546,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8663,Amandava amandava,bird,1994,Lower Risk/least concern,LR/lc,NA
 8663,Amandava amandava,bird,1988,Lower Risk/least concern,LR/lc,NA
 8664,Amandava formosa,bird,2018,Vulnerable,VU,NA
+8664,Amandava formosa,bird,2017,Vulnerable,VU,NA
 8664,Amandava formosa,bird,2016,Vulnerable,VU,NA
 8664,Amandava formosa,bird,2012,Vulnerable,VU,NA
 8664,Amandava formosa,bird,2008,Vulnerable,VU,NA
@@ -3569,6 +3590,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8709,Lonchura punctulata,bird,1994,Lower Risk/least concern,LR/lc,NA
 8709,Lonchura punctulata,bird,1988,Lower Risk/least concern,LR/lc,NA
 8713,Lonchura malacca,bird,2018,Least Concern,LC,NA
+8713,Lonchura malacca,bird,2017,Least Concern,LC,NA
 8713,Lonchura malacca,bird,2016,Least Concern,LC,NA
 8713,Lonchura malacca,bird,2012,Least Concern,LC,NA
 8713,Lonchura malacca,bird,2009,Least Concern,LC,NA
@@ -3577,7 +3599,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8713,Lonchura malacca,bird,2000,Lower Risk/least concern,LR/lc,NA
 8713,Lonchura malacca,bird,1994,Not Recognized,NR,NA
 8713,Lonchura malacca,bird,1988,Not Recognized,NR,NA
-8854,Carpodacus erythrinus,bird,2017,Least Concern,LC,NA
 8854,Carpodacus erythrinus,bird,2016,Least Concern,LC,NA
 8854,Carpodacus erythrinus,bird,2015,Least Concern,LC,NA
 8854,Carpodacus erythrinus,bird,2014,Least Concern,LC,NA
@@ -3605,7 +3626,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 8960,Emberiza melanocephala,bird,2000,Lower Risk/least concern,LR/lc,NA
 8960,Emberiza melanocephala,bird,1994,Lower Risk/least concern,LR/lc,NA
 8960,Emberiza melanocephala,bird,1988,Lower Risk/least concern,LR/lc,NA
-8961,Emberiza bruniceps,bird,2017,Least Concern,LC,NA
 8961,Emberiza bruniceps,bird,2016,Least Concern,LC,NA
 8961,Emberiza bruniceps,bird,2012,Least Concern,LC,NA
 8961,Emberiza bruniceps,bird,2009,Least Concern,LC,NA
@@ -3631,16 +3651,13 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 30245,Phylloscopus humei,bird,2000,Not Recognized,NR,NA
 30245,Phylloscopus humei,bird,1994,Not Recognized,NR,NA
 30245,Phylloscopus humei,bird,1988,Not Recognized,NR,NA
-31027,Anas crecca,bird,2019,Least Concern,LC,NA
-31027,Anas crecca,bird,2016,Least Concern,LC,NA
-31027,Anas crecca,bird,2012,Least Concern,LC,NA
-31027,Anas crecca,bird,2009,Least Concern,LC,NA
-31027,Anas crecca,bird,2008,Least Concern,LC,NA
-31027,Anas crecca,bird,2005,Least Concern,LC,NA
-31027,Anas crecca,bird,2004,Not Recognized,NR,NA
-31027,Anas crecca,bird,2000,Lower Risk/least concern,LR/lc,NA
-31027,Anas crecca,bird,1994,Lower Risk/least concern,LR/lc,NA
-31027,Anas crecca,bird,1988,Lower Risk/least concern,LR/lc,NA
+31027,Anas crecca,bird,2020,Least Concern,LC,NA
+31027,Anas crecca,bird,2008,Not Recognized,NR,NA
+31027,Anas crecca,bird,2005,Not Recognized,NR,NA
+31027,Anas crecca,bird,2004,Least Concern,LC,NA
+31027,Anas crecca,bird,2000,Not Recognized,NR,NA
+31027,Anas crecca,bird,1994,Not Recognized,NR,NA
+31027,Anas crecca,bird,1988,Not Recognized,NR,NA
 31029,Gyps indicus,bird,2017,Critically Endangered,CR,NA
 31029,Gyps indicus,bird,2016,Critically Endangered,CR,NA
 31029,Gyps indicus,bird,2015,Critically Endangered,CR,NA
@@ -3664,7 +3681,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 31036,Aquila hastata,bird,1994,Not Recognized,NR,Clanga hastata
 31036,Aquila hastata,bird,1988,Not Recognized,NR,Clanga hastata
 31051,Gallinago gallinago,bird,2019,Least Concern,LC,NA
-31051,Gallinago gallinago,bird,2017,Least Concern,LC,NA
 31051,Gallinago gallinago,bird,2016,Least Concern,LC,NA
 31051,Gallinago gallinago,bird,2014,Least Concern,LC,NA
 31051,Gallinago gallinago,bird,2008,Not Recognized,NR,NA
@@ -3673,9 +3689,9 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 31051,Gallinago gallinago,bird,2000,Lower Risk/least concern,LR/lc,NA
 31051,Gallinago gallinago,bird,1994,Not Recognized,NR,NA
 31051,Gallinago gallinago,bird,1988,Not Recognized,NR,NA
-31195,Lanius excubitor,bird,2019,Least Concern,LC,NA
 31195,Lanius excubitor,bird,2017,Least Concern,LC,NA
 31195,Lanius excubitor,bird,2016,Least Concern,LC,NA
+31546,Nisaetus cirrhatus,bird,2020,Least Concern,LC,NA
 31546,Nisaetus cirrhatus,bird,2016,Least Concern,LC,NA
 31546,Nisaetus cirrhatus,bird,2013,Least Concern,LC,NA
 31546,Nisaetus cirrhatus,bird,2012,Least Concern,LC,NA
@@ -3705,7 +3721,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 31685,Mirafra affinis,bird,1994,Not Recognized,NR,NA
 31685,Mirafra affinis,bird,1988,Not Recognized,NR,NA
 32154,Zoothera dauma,bird,2019,Least Concern,LC,NA
-32239,Ficedula albicilla,bird,2017,Least Concern,LC,NA
 32239,Ficedula albicilla,bird,2016,Least Concern,LC,NA
 32239,Ficedula albicilla,bird,2012,Least Concern,LC,NA
 32239,Ficedula albicilla,bird,2010,Least Concern,LC,NA
@@ -3735,6 +3750,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 32280,Chloropsis aurifrons,bird,2000,Not Recognized,NR,NA
 32280,Chloropsis aurifrons,bird,1994,Not Recognized,NR,NA
 32280,Chloropsis aurifrons,bird,1988,Not Recognized,NR,NA
+32282,Mirafra assamica,bird,2017,Least Concern,LC,NA
 32282,Mirafra assamica,bird,2016,Least Concern,LC,NA
 32282,Mirafra assamica,bird,2013,Least Concern,LC,NA
 32282,Mirafra assamica,bird,2012,Least Concern,LC,NA
@@ -3745,17 +3761,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 32282,Mirafra assamica,bird,2000,Not Recognized,NR,NA
 32282,Mirafra assamica,bird,1994,Not Recognized,NR,NA
 32282,Mirafra assamica,bird,1988,Not Recognized,NR,NA
-32423,Milvus migrans,bird,2019,Least Concern,LC,NA
-32423,Milvus migrans,bird,2016,Least Concern,LC,NA
-32423,Milvus migrans,bird,2015,Least Concern,LC,NA
-32423,Milvus migrans,bird,2013,Least Concern,LC,NA
-32423,Milvus migrans,bird,2012,Least Concern,LC,NA
-32423,Milvus migrans,bird,2010,Least Concern,LC,NA
-32423,Milvus migrans,bird,2008,Not Recognized,NR,NA
-32423,Milvus migrans,bird,2004,Not Recognized,NR,NA
-32423,Milvus migrans,bird,2000,Not Recognized,NR,NA
-32423,Milvus migrans,bird,1994,Not Recognized,NR,NA
-32423,Milvus migrans,bird,1988,Not Recognized,NR,NA
+32423,Milvus migrans,bird,2020,Least Concern,LC,NA
 32458,Macronous gularis,bird,2016,Least Concern,LC,Mixornis gularis
 32458,Macronous gularis,bird,2013,Least Concern,LC,Mixornis gularis
 32458,Macronous gularis,bird,2012,Least Concern,LC,Mixornis gularis
@@ -3807,6 +3813,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 32580,Rostratula benghalensis,bird,2000,Not Recognized,NR,NA
 32580,Rostratula benghalensis,bird,1994,Not Recognized,NR,NA
 32580,Rostratula benghalensis,bird,1988,Not Recognized,NR,NA
+32591,Buteo buteo,bird,2020,Least Concern,LC,NA
 32591,Buteo buteo,bird,2017,Least Concern,LC,NA
 32591,Buteo buteo,bird,2016,Least Concern,LC,NA
 32591,Buteo buteo,bird,2015,Least Concern,LC,NA
@@ -3975,6 +3982,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 62454,Nemacheilus kodaguensis,fish,2011,Vulnerable,VU,NA
 62947,Nemacheilus menoni,fish,2011,Vulnerable,VU,NA
 62572,Nemacheilus monilis,fish,2011,Least Concern,LC,NA
+60790,Nemacheilus mooreh,fish,2020,Least Concern,LC,NA
 60790,Nemacheilus mooreh,fish,2011,Least Concern,LC,NA
 62947,Nemacheilus periyarensis,fish,2011,Vulnerable,VU,NA
 62826,Osteocheilus longidorsalis,fish,NA,NA,NA,none available
@@ -4037,6 +4045,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 62454,Puntius cauveriensis,fish,2011,Endangered,EN,NA
 62454,Puntius assimilis,fish,2015,Vulnerable,VU,Dawkinsia assimilis
 62454,Puntius assimilis,fish,2011,Vulnerable,VU,Dawkinsia assimilis
+62826,Pseudosphromenus dayi,fish,2020,Vulnerable,VU,NA
 62826,Pseudosphromenus dayi,fish,2011,Vulnerable,VU,NA
 62826,Pseudosphromenus dayi,fish,2009,Near Threatened,NT,NA
 60370,Proeutropiichthys taakree,fish,2011,Least Concern,LC,NA
@@ -4108,10 +4117,12 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 60610,Osteocheilus naohil,fish,NA,NA,NA,none available
 62826,Pristolepis fasciata,fish,2019,Least Concern,LC,NA
 62826,Pristolepis fasciata,fish,2011,Least Concern,LC,NA
+60534,Puntius narayani,fish,2020,Least Concern,LC,Pethia narayani
 60534,Puntius narayani,fish,2015,Least Concern,LC,Pethia narayani
 60534,Puntius narayani,fish,2011,Least Concern,LC,Pethia narayani
 60610,Silonia childrenii,fish,NA,NA,NA,none available
 60472,Monopterusdicus,fish,NA,NA,NA,none available
+62491,Nemacheilus striatus,fish,2020,Endangered,EN,Longischistura striatus
 62491,Nemacheilus striatus,fish,2011,Endangered,EN,Longischistura striatus
 62822,Oryzias dancena,fish,2019,Least Concern,LC,NA
 62822,Oryzias dancena,fish,2011,Least Concern,LC,NA
@@ -4199,6 +4210,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 172662,Cnemaspis ornata,rptl,2013,Near Threatened,NT,NA
 172664,Typhlops exiguus,rptl,2013,Data Deficient,DD,Indotyphlops exiguus
 172666,Hemidactylus maculatus,rptl,2013,Least Concern,LC,NA
+172667,Uropeltis macrorhynchus,rptl,2018,Data Deficient,DD,Uropeltis macrorhyncha
 172667,Uropeltis macrorhynchus,rptl,2013,Data Deficient,DD,Uropeltis macrorhyncha
 172670,Uropeltis rubrolineatus,rptl,2018,Least Concern,LC,Uropeltis rubrolineata
 172670,Uropeltis rubrolineatus,rptl,2013,Least Concern,LC,Uropeltis rubrolineata
@@ -4223,11 +4235,11 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 172706,Eurylepis poonaensis,rptl,2013,Endangered,EN,NA
 172708,Trimeresurus malabaricus,rptl,2013,Least Concern,LC,NA
 172709,Teretrurus sanguineus,rptl,2013,Least Concern,LC,NA
-172711,Uropeltis nitidus,rptl,2018,Data Deficient,DD,Uropeltis nitida
 172711,Uropeltis nitidus,rptl,2013,Data Deficient,DD,Uropeltis nitida
 172713,Hemidactylus reticulatus,rptl,2013,Least Concern,LC,NA
 172714,Uropeltis ellioti,rptl,2013,Least Concern,LC,NA
 172715,Typhlops thurstoni,rptl,2013,Data Deficient,DD,Gerrhopilus thurstoni
+172717,Geckoella collegalensis,rptl,2018,Least Concern,LC,Cyrtodactylus collegalensis
 172717,Geckoella collegalensis,rptl,2013,Least Concern,LC,Cyrtodactylus collegalensis
 173021,Otocryptis beddomii,rptl,2013,Endangered,EN,NA
 174089,Salea horsfieldii,rptl,2013,Least Concern,LC,NA
@@ -4249,7 +4261,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 176713,Hydrophis cantoris,rptl,2010,Data Deficient,DD,NA
 176715,Hydrophis caerulescens,rptl,2010,Least Concern,LC,NA
 176717,Hydrophis spiralis,rptl,2010,Least Concern,LC,NA
-176719,Enhydrina schistosa,rptl,2018,Least Concern,LC,Hydrophis schistosus
 176719,Enhydrina schistosa,rptl,2010,Least Concern,LC,Hydrophis schistosus
 176724,Hydrophis mamillaris,rptl,2010,Data Deficient,DD,NA
 176726,Hydrophis cyanocinctus,rptl,2010,Least Concern,LC,NA
@@ -4257,6 +4268,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 176738,Pelamis platura,rptl,2017,Least Concern,LC,Hydrophis platurus
 176738,Pelamis platura,rptl,2010,Least Concern,LC,Hydrophis platurus
 176741,Hydrophis lapemoides,rptl,2010,Least Concern,LC,NA
+176746,Lapemis curtus,rptl,2018,Least Concern,LC,Hydrophis curtus
 176746,Lapemis curtus,rptl,2010,Least Concern,LC,Hydrophis curtus
 176765,Hydrophis gracilis,rptl,2010,Least Concern,LC,NA
 176769,Acrochordus granulatus,rptl,2010,Least Concern,LC,NA
@@ -4289,6 +4301,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 178420,Platyplectrurus madurensis,rptl,2010,Data Deficient,DD,NA
 178455,Uropeltis arcticeps,rptl,2013,Least Concern,LC,NA
 178455,Uropeltis arcticeps,rptl,2010,Least Concern,LC,NA
+178483,Uropeltis rubromaculatus,rptl,2018,Least Concern,LC,Uropeltis rubromaculata
 178483,Uropeltis rubromaculatus,rptl,2013,Least Concern,LC,Uropeltis rubromaculata
 178483,Uropeltis rubromaculatus,rptl,2010,Data Deficient,DD,Uropeltis rubromaculata
 178550,Eutropis bibronii,rptl,2013,Least Concern,LC,NA
@@ -4388,6 +4401,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 6106,Cynopterus sphinx,maml,2019,Least Concern,LC,NA
 6106,Cynopterus sphinx,maml,2008,Least Concern,LC,NA
 6106,Cynopterus sphinx,maml,1996,Lower Risk/least concern,LR/lc,NA
+7140,Elephas maximus,maml,2020,Endangered,EN,NA
 7140,Elephas maximus,maml,2008,Endangered,EN,NA
 7140,Elephas maximus,maml,1996,Endangered,EN,NA
 7140,Elephas maximus,maml,1994,Endangered,E,NA
@@ -4395,6 +4409,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 7140,Elephas maximus,maml,1988,Endangered,E,NA
 7140,Elephas maximus,maml,1986,Endangered,E,NA
 7140,Elephas maximus,maml,1965,"""Very rare but believed to be stable or increasing""",NA,NA
+7787,Eonycteris spelaea,maml,2020,Least Concern,LC,NA
 7787,Eonycteris spelaea,maml,2008,Least Concern,LC,NA
 7787,Eonycteris spelaea,maml,1996,Lower Risk/least concern,LR/lc,NA
 8540,Felis chaus,maml,2016,Least Concern,LC,NA
@@ -4448,10 +4463,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 10142,Hipposideros lankadiva,maml,2008,Least Concern,LC,NA
 10142,Hipposideros lankadiva,maml,2004,Least Concern,LC,NA
 10142,Hipposideros lankadiva,maml,1996,Lower Risk/least concern,LR/lc,NA
-10154,Hipposideros pomona,maml,2019,Least Concern,LC,NA
-10154,Hipposideros pomona,maml,2008,Least Concern,LC,NA
-10154,Hipposideros pomona,maml,2000,Lower Risk/least concern,LR/lc,NA
-10154,Hipposideros pomona,maml,1996,Data Deficient,DD,NA
+10154,Hipposideros pomona,maml,2020,Endangered,EN,NA
 10162,Hipposideros speoris,maml,2019,Least Concern,LC,NA
 10162,Hipposideros speoris,maml,2008,Least Concern,LC,NA
 10162,Hipposideros speoris,maml,2004,Least Concern,LC,NA
@@ -4467,6 +4479,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 10985,Kerivoula picta,maml,2020,Near Threatened,NT,NA
 10985,Kerivoula picta,maml,2008,Least Concern,LC,NA
 10985,Kerivoula picta,maml,1996,Lower Risk/least concern,LR/lc,NA
+11374,Latidens salimalii,maml,2020,Endangered,EN,NA
 11374,Latidens salimalii,maml,2008,Endangered,EN,NA
 11374,Latidens salimalii,maml,2004,Endangered,EN,NA
 11374,Latidens salimalii,maml,1996,Critically Endangered,CR,NA
@@ -4520,7 +4533,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 12939,Megaderma spasma,maml,2019,Least Concern,LC,NA
 12939,Megaderma spasma,maml,2008,Least Concern,LC,NA
 12939,Megaderma spasma,maml,1996,Lower Risk/least concern,LR/lc,NA
-13143,Melursus ursinus,maml,2020,Vulnerable,VU,NA
 13143,Melursus ursinus,maml,2016,Vulnerable,VU,NA
 13143,Melursus ursinus,maml,2008,Vulnerable,VU,NA
 13143,Melursus ursinus,maml,1996,Vulnerable,VU,NA
@@ -4620,7 +4632,6 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 17344,Pipistrellus javanicus,maml,1996,Lower Risk/least concern,LR/lc,NA
 17368,Pipistrellus tenuis,maml,2019,Least Concern,LC,NA
 17368,Pipistrellus tenuis,maml,2008,Least Concern,LC,NA
-17368,Pipistrellus tenuis,maml,1996,Lower Risk/least concern,LR/lc,NA
 17481,Platacanthomys lasiurus,maml,2016,Vulnerable,VU,NA
 17481,Platacanthomys lasiurus,maml,2008,Vulnerable,VU,NA
 17481,Platacanthomys lasiurus,maml,1996,Lower Risk/least concern,LR/lc,NA
@@ -4641,6 +4652,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 18150,Prionailurus viverrinus,maml,2002,Vulnerable,VU,NA
 18150,Prionailurus viverrinus,maml,1996,Lower Risk/near threatened,LR/nt,NA
 18150,Prionailurus viverrinus,maml,1994,Insufficiently Known,K,NA
+18725,Pteropus giganteus,maml,2020,Least Concern,LC,NA
 18725,Pteropus giganteus,maml,2008,Least Concern,LC,NA
 18725,Pteropus giganteus,maml,1996,Lower Risk/least concern,LR/lc,NA
 19360,Rattus rattus,maml,2016,Least Concern,LC,NA
@@ -4652,6 +4664,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 19378,Ratufa indica,maml,2008,Near Threatened,NT,NA
 19378,Ratufa indica,maml,1996,Vulnerable,VU,NA
 19381,Ratufa macroura,maml,2019,Near Threatened,NT,NA
+19381,Ratufa macroura,maml,2017,Near Threatened,NT,NA
 19381,Ratufa macroura,maml,2008,Near Threatened,NT,NA
 19381,Ratufa macroura,maml,1996,Vulnerable,VU,NA
 19547,Rhinolophus lepidus,maml,2019,Least Concern,LC,NA
@@ -4808,6 +4821,7 @@ origId, sciName, taxon, year, category, code, synonymousSpeciesUsed
 44694,Trachypithecus johnii,maml,1990,Endangered,E,Semnopithecus johnii
 44694,Trachypithecus johnii,maml,1988,Endangered,E,Semnopithecus johnii
 44694,Trachypithecus johnii,maml,1986,Vulnerable,V,Semnopithecus johnii
+44722,Loris lydekkerianus,maml,2020,Near Threatened,NT,NA
 44722,Loris lydekkerianus,maml,2008,Least Concern,LC,NA
 44722,Loris lydekkerianus,maml,2004,Near Threatened,NT,NA
 135440,Semnopithecus priam,maml,2020,Near Threatened,NT,NA
